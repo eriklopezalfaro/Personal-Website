@@ -1,0 +1,61 @@
+{% extends 'portfolio/base.html' %}
+
+{% block content %}
+{% load static %}
+<!--------------------------- ABOUT ---------------------------------->
+<section id="about" class="About">
+    <div class="content">
+        <h2>Who am I</h2>
+    </div>
+
+</section>
+<!--------------------------- PROJECTS ---------------------------------->
+<section id="projects" class="Projects">
+    <h2>Projects</h2>
+    <div class="project-container">
+        {% for project in projects %}
+        <div class="project">
+            <div class="project-cont">
+                <img class="image" src="{{ project.image.url }}" alt="">
+                <h3>{{ project.title }}</h3>
+                <p>{{ project.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!--------------------------- CONTACT ---------------------------------->
+<section id="contact" class="Contact">
+    <div class="contact-info">
+        <h3>Contact</h3>
+        <div class="info">
+            <img src="{% static 'portfolio/images/github.png' %}" alt="">
+            <h4>+2068984561</h4>
+        </div>
+        <div class="info">
+            <img src="{% static 'portfolio/images/github.png' %}" alt="">
+            <h4>eriklopezalfaro@outlook.com</h4>
+        </div>
+        <div class="info">
+            <img src="{% static 'portfolio/images/github.png' %}" alt="">
+            <h4>placeholder</h4>
+        </div>
+
+    </div>
+    <div class="contact-container">
+        <form action="">
+            <label for="">Name:</label><br>
+            <input type="text"><br>
+
+            <label for="">Subject</label><br>
+            <input type="text"><br>
+            
+            <label for="">Message</label><br>
+            <input type="text"><br>
+
+
+        </form>
+    </div>
+</section>
+
+{% endblock %}

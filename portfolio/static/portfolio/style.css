@@ -1,0 +1,386 @@
+/* ---------------------------------------------------- HEADER --------------------------------------------------------- */
+/* resets, root variables, whole body */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
+:root {
+    --titles: 'Nunito', sans-serif;
+    --smaller_text: 'Open Sans', sans-serif;
+}
+
+html {
+    /* transition: 1ms; */
+    scroll-behavior: smooth;
+}
+.hero-image, .About, .Projects, .Contact {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    flex-direction: column;
+    /* need to look up heights */
+    min-height: 100vh;
+    flex-basis: 100vw;
+    position: relative;
+}
+
+/* ---------------------------------------------------- HEADER --------------------------------------------------------- */
+body::-webkit-scrollbar {
+    display: none;
+  }
+.hero-image {
+    /*  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../portfolio/images/bg.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    
+    /* box-shadow: 5px 5px 8px 15px black; */
+    /* , 10px 10px 8px 15px gray, 15px 15px 8px 15px silver */
+}
+/* .hero-image .wrapper */
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: 100vw;
+
+    position: sticky;
+    top: 0;
+    background-color: #000;
+    z-index: 1;
+}
+.hero-text {
+    display: flex;
+    margin: auto;
+    align-items:flex-start;
+    justify-content: flex-start; 
+
+    flex-direction: column;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    width: 85vw;
+}
+/* ------------------------------------------------------- NAV ------------------------------------------------------- */
+nav {
+    flex: 2;
+    justify-content: space-around;
+    padding: 10px;
+}
+.logo, .nav-links {
+    display: flex;
+    align-items: center;
+    
+}
+
+/* --------------------------------- Logo ------------------------------- */
+.logo {
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+
+    color: aliceblue;
+    text-decoration: none;
+}
+/* --------------------------------- Nav links ------------------------------- */
+
+nav .nav-links {
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 15px;
+}
+.nav-link {
+    color: black;
+    padding: 0.7375rem 1.575rem;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.125rem;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.15s;
+    color: aliceblue;
+
+}
+.nav-link-resume {
+    color: white;
+    background: linear-gradient(teal, rgb(94, 94, 207));
+    border-radius: 5px;
+
+    padding: 0.7375rem 1.575rem;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.125rem;
+    cursor: pointer;
+    text-decoration: none;
+
+    transition: 0.15s;
+}
+.nav-link-resume:hover {
+    opacity: 0.67;
+}
+.nav-link:hover {
+    opacity: 0.67;
+}
+/* --------------------------------- Socail Medias ------------------------------- */
+.social-media, .social-media a {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    height: 3.6rem;
+}
+.social-media-icon-1 img, .social-media-icon-2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 1rem 0.5rem;
+}
+.social-media-icon-1:hover, .social-media-icon-2:hover  {
+    opacity: 0.67;
+}
+/* ---------------------------------------------------------- HERO TEXT ----------------------------------------------------- */
+.hero-text h1, .hero-text p, .hero-text .button {
+
+    padding: 15px;
+    margin: 15px;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: aliceblue;
+ }
+.hero-text .button {
+    color: white;
+    padding: 0.7375rem 1.575rem;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    cursor: pointer;
+    transition: 0.15s;
+    text-decoration: none;
+
+    /* match color */
+    background: linear-gradient(teal, rgb(94, 94, 207));
+    border-radius: 5px;
+
+}
+.hero-text .button:hover {
+    opacity: 0.8;
+}
+/* ------------------------------------------------------------ ABOUT ----------------------------------------------------- */
+.About {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+
+    padding: 13px;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+.content {
+    margin-top:5%;
+}
+.About h2 {
+    margin: 5px;
+    padding: 10px;
+}
+/* ---------------------------------------------------------- PROJECTS --------------------------------------------------- */
+
+/* fix: the content button when resized small overflows */
+
+.project-container::-webkit-scrollbar {
+    height: 0.5em;
+}
+.project-container::-webkit-scrollbar-track {
+    background:linear-gradient(white,silver);
+    border-radius: 100vh;
+    margin-block: 0.5em;
+
+}
+.project-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(teal, rgb(94, 94, 207));
+    /* border: .5em solid linear-gradient(white,silver); */
+    border-radius: 100vh;
+}
+
+.Projects {
+    display: flex;
+    flex-direction: column;
+    /* background-color: blueviolet; */
+    padding: 13px 0;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+.Projects h2 {
+    margin: 5px;
+    padding: 10px;
+    margin-top:5%;
+    
+}
+.project-container {
+    display: flex;
+    width: 85%;
+    padding: 10px 0; 
+    overflow: auto;
+    height: 400px;
+
+    
+}
+.project {
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    margin: 10px;
+    height: auto;
+
+    background: #000;
+    box-shadow: -2rem 0 2.5rem rgba(255, 254, 254, 0.65);
+    border-radius: 12px;
+
+    transition: .1s;
+}
+.project:hover {
+    transform: translateY(-1rem);
+}
+.project:hover~.project {
+    transform: translateX(110px);
+}
+.project:not(:first-child){
+    margin-left: -105px;
+}
+.project .image {
+    width: 350px; 
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px 12px 0px 0px;
+
+}
+.project h3, .project p {
+    margin: 5px;
+    padding: 10px;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    color: aliceblue;
+}
+/* ------------------------------------------------------------- CONTACT ------------------------------------------------ */
+.Contact {
+    display: flex;
+    padding: 13px;
+    font-family:'Nunito', sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+
+    position: relative;
+    /* margin-top:15%; */
+    background-color: rgba(0, 0, 0, 0.925);
+}
+.contact-info, .contact-container {
+    /* padding: 1rem; */
+    /* margin: 1rem; */
+    justify-content: center;
+    display: flex;
+    flex:1;
+    vertical-align:bottom;
+
+    background-color: rgb(7, 7, 7);
+    border: 2px solid black ;
+    box-shadow: -0.5rem 0 1.5rem rgb(255, 255, 255);
+    border-radius: 12px;
+    color: rgb(202, 209, 214);
+
+}
+
+.contact-container form {
+    flex-direction: column;
+    padding: 1rem;
+    margin: 1rem;
+}
+.contact-container form input {
+    flex-direction: column;
+    padding: 5px;
+    margin: 5px 0;
+}
+.contact-container {
+    /* background-color: brown; */
+    max-width: 50vw;
+    height: 70vh;
+    z-index: 0;
+    /* transition: 1s; */
+
+    margin-top: 5%;
+    margin-right: 10%;
+
+}
+.contact-info {
+    flex-direction: column;
+    max-width: 30vw;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+
+    /* background-color: antiquewhite; */
+    z-index: 1;
+    /* transition: 1s; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../portfolio/images/bg.jpg") ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+    transform: translateX(140px);
+}
+.info, .contact-info h3 {
+    display: flex;
+    width: 3vw;
+    height: 3vh;
+    /* padding: 1rem; */
+    margin: auto;
+    align-items: center;
+    padding: 20px;
+}
+.info img {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    
+}
+.info h4 {
+    flex: 1;    
+
+}
+/* 
+.contact-container:hover {
+    
+    transform: translateX(-260px);
+}
+.contact-info:hover { 
+    transform: translateX(260px);
+}  */
+
+/* neeed to take away hover event and change flex direction for mobile */
+
+/* ----------------------------------- HEADER ----------------------------------- */
