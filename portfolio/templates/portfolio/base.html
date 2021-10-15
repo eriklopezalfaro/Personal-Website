@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static '/portfolio/images/logos/ERIK LOPEZ-logo.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
-    <title>Erik Lopez</title>
+    <title>Erik Lopez | Software Developer</title>
 </head>
 <body>
     {% load static %}
@@ -14,25 +15,26 @@
     
     <header id="home" class="hero-image">
         <div class="wrapper">
-            <a href="" class="logo">Erik Lopez<img src="" alt=""></a>
+            <a href="" class="logo"><img src="{% static '/portfolio/images/logos/ERIK LOPEZ-logos_white.png' %}" alt="Logo"></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a class="nav-link" href="#home">Home</a></li>
-                    <li><a class="nav-link" href="#about">About</a></li>
-                    <li><a class="nav-link" href="#projects">Projects</a></li>
-                    <li><a class="nav-link" href="#contact">Contact</a></li>
-                    <li><a class="nav-link-resume" href="">Resume</a></li>
+                    <li><a class="nav-link icons" href="#home">Home</a></li>
+                    <li><a class="nav-link icons" href="#about">About</a></li>
+                    <li><a class="nav-link icons" href="#projects">Projects</a></li>
+                    <li><a class="nav-link icons" href="#contact">Contact</a></li>
+                    <!-- <li><a class="nav-link-resume" href="">Resume</a></li> -->
                 </ul>
             </nav>
             <section class="social-media">
-                <div><a href="" class="social-media-icon-1"><img src="{% static 'portfolio/images/github.png' %}" alt=""></a></div>
-                <div><a href="" class="social-media-icon-2"><img src="{% static 'portfolio/images/linkedin.png' %}" alt=""></a></div>
+                <div><a href="" class="social-media-icon-1 icon"><img src="{% static 'portfolio/images/github.png' %}" alt="Github"></a></div>
+                <div><a href="" class="social-media-icon-2 icon"><img src="{% static 'portfolio/images/linkedin.png' %}" alt="Linkedin"></a></div>
+                <a class="nav-link-resume resume" href="">Resume</a>
             </section>
         </div>
         <div class="hero-text">
             <h1>I am Erik Lopez</h1>
             <p>And I am a Software Developer</p>
-            <a class="button">Hire Me</a>
+            <a href="#Contact" class="button">Hire Me</a>
         </div>
 
         <!-- animation -->
@@ -54,6 +56,7 @@
         <div class="slider"></div>
     </header>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{% static 'portfolio/app.js' %}"></script>
     <!-- end animation -->

@@ -4,6 +4,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    clear: both
 }
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
 :root {
@@ -12,13 +13,15 @@
 }
 
 html {
-    /* transition: 1ms; */
     scroll-behavior: smooth;
 }
 .hero-image, .About, .Projects, .Contact {
+    display: -webkit-flex;
     display: flex;
     margin: auto;
+    -webkit-align-items: center;
     align-items: center;
+    -webkit-flex-direction: column;
     flex-direction: column;
     /* need to look up heights */
     min-height: 100vh;
@@ -31,31 +34,27 @@ body::-webkit-scrollbar {
     display: none;
   }
 .hero-image {
-    /*  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),  */
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../portfolio/images/bg.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
 
+    display: -webkit-flex;
     display: flex;
-    /* align-items: center;
-    justify-content: center; */
+    -webkit-flex-direction: column;
     flex-direction: column;
-    
-    
-    /* box-shadow: 5px 5px 8px 15px black; */
-    /* , 10px 10px 8px 15px gray, 15px 15px 8px 15px silver */
 }
-/* .hero-image .wrapper */
 .wrapper {
+    display: -webkit-flex;
     display: flex;
     align-items: center;
+    -webkit-justify-content: center;
     justify-content: center;
-    padding: 5px;
     position: fixed;
     top: 0;
     background-color: #000;
     z-index: 1;
+    transition: background-color 1.2s ease;
 }
 .hero-text, .About, .Projects, .contact-info, .contact-container {
     width: 80vw;
@@ -65,22 +64,12 @@ body::-webkit-scrollbar {
     padding: 0 10vw;
 }
 .hero-text {
-    /* display: flex;
-    margin: auto;
-    align-items:flex-start;
-    justify-content: flex-start; 
-
-    flex-direction: column;
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    width: 85vw; */
-
-    /* still oveerflowing button */
+    /* height: 90vh; */
+    width: 80%;
     position: absolute;
-    top: 30%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-30%);
+    transform: translate(-50%,-50%);
     color: bisque;
 }
 /* ------------------------------------------------------- NAV ------------------------------------------------------- */
@@ -90,28 +79,33 @@ nav {
     padding: 10px;
 }
 .logo, .nav-links {
+    display: -webkit-flex;
     display: flex;
+    -webkit-align-items: center;
     align-items: center;
 }
 /* --------------------------------- Logo ------------------------------- */
 .logo {
     flex: 1;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px;
+    height: 2.5rem;
+    width: auto;
+}
+.logo img {
+    
+    width: auto;
+    height: 100%;
+    object-fit:scale-down;
+    padding-left: 1px;
 
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    text-transform: uppercase;
-    font-size: 1.125rem;
-
-    color: aliceblue;
-    text-decoration: none;
+}
+.logo.scrolled {
+    height: 2rem;
 }
 /* --------------------------------- Nav links ------------------------------- */
 
 nav .nav-links {
+    -webkit-align-items: center;
+    -webkit-justify-content: center;
     align-items: center;
     justify-content: center;
     list-style: none;
@@ -130,16 +124,75 @@ nav .nav-links {
     color: aliceblue;
 
 }
-.nav-link-resume {
-    color: white;
-    background: linear-gradient(teal, rgb(94, 94, 207));
-    border-radius: 5px;
+.nav-link:hover {
+    opacity: 0.67;
+}
+.wrapper.scrolled {
+    background-color: rgba(114, 2, 2, 0.932);
+    /* opacity: 0.6; */
+    height: 3.2rem;
+    box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+}
+.icons.scrolled {
+    /* color: rgb(0, 0, 0); */
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.795);
+}
+.icon.scrolled {
+    height: 1.5rem;
+    /* padding: 0.5rem 0 0.5rem 1rem; */
+}
+.resume.scrolled {
+    font-size: 0.8rem;
+    height: 1.7rem;
+    margin: 1rem 0 1rem 1.1rem;
+    align-items: center;
 
-    padding: 0.7375rem 1.575rem;
+    background: rgba(0, 0, 0, 0.829);
+
+}
+/* --------------------------------- Socail Medias ------------------------------- */
+.social-media {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    flex: 1;
+    height: 3.6rem;
+}
+.social-media div {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+    height: 100%;
+    width: 2.8rem;
+    -webkit-align-items: center;
+    align-items: center;
+    vertical-align:middle;
+    /* padding: 1.1rem 0 0.7rem 1rem;
+    margin: auto 0; */
+    padding: 1rem 0 1rem 1rem;
+    margin: auto 0;
+
+}
+.nav-link-resume {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+
+    color: white;
+    /* background: linear-gradient(teal, rgb(94, 94, 207)); */
+    background: rgba(146, 0, 0, 0.678);
+    border-radius: 2px;
+    padding: 0.5rem 0.5rem;
+    margin: auto 0 auto 1rem;
+
     font-family:'Nunito', sans-serif;
     font-weight: 600;
     font-style: italic;
-    font-size: 1.125rem;
+    font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
 
@@ -148,21 +201,11 @@ nav .nav-links {
 .nav-link-resume:hover {
     opacity: 0.67;
 }
-.nav-link:hover {
-    opacity: 0.67;
-}
-/* --------------------------------- Socail Medias ------------------------------- */
-.social-media, .social-media a {
-    display: flex;
-    justify-content: flex-end;
-    flex: 1;
-    height: 3.6rem;
-}
 .social-media-icon-1 img, .social-media-icon-2 img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    padding: 1rem 0.5rem;
+    object-fit:scale-down;
+    padding-left: 1px;
 }
 .social-media-icon-1:hover, .social-media-icon-2:hover  {
     opacity: 0.67;
@@ -179,17 +222,13 @@ nav .nav-links {
  }
 .hero-text .button {
     color: white;
-    padding: 0.7375rem 1.575rem;
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
-    cursor: pointer;
+    padding: 0.6rem 1rem;
+    margin: 30px;
     transition: 0.15s;
     text-decoration: none;
 
-    /* match color */
-    background: linear-gradient(teal, rgb(94, 94, 207));
-    border-radius: 5px;
+    background: rgba(114, 2, 2, 0.932);
+    border-radius: 2px;
 
 }
 .hero-text .button:hover {
@@ -204,21 +243,23 @@ nav .nav-links {
     width: 100%;
     height: 100%;
     display: flex;
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
 
     z-index: 999;
 
 }
 .intro-text {
-    color: aquamarine;
+    color: rgba(146, 0, 0, 0.678);
     font-family: fantasy, sans-serif;
     font-size: 3 rem;
 
 }
 
 .slider {
-    background: rgb(133, 29, 29);
+    background: rgba(146, 0, 0, 0.678);
     position: fixed;
     top: 0;
     left: 0;
@@ -241,9 +282,14 @@ nav .nav-links {
 }
 /* ------------------------------------------------------------ ABOUT ----------------------------------------------------- */
 .About {
+    
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
     flex-direction: column;
+    /* -webkit-justify-content: center; */
     /* justify-content: center; */
+    -webkit-align-items: center;
     align-items: center;
 
     padding: 13px;
@@ -252,7 +298,7 @@ nav .nav-links {
     font-style: italic;
 }
 .content {
-    margin-top:10%;
+    margin-top: 7.5%;
 }
 .About h2 {
     margin: 5px;
@@ -264,6 +310,8 @@ nav .nav-links {
 
 .project-container::-webkit-scrollbar {
     height: 0.5em;
+    padding: 2rem;
+    margin: 1rem;
 }
 .project-container::-webkit-scrollbar-track {
     background:linear-gradient(white,silver);
@@ -278,10 +326,13 @@ nav .nav-links {
 }
 
 .Projects {
+    display: -webkit-flex;
     display: flex;
+    -webkit-flex-direction: column;
     flex-direction: column;
-    /* background-color: blueviolet; */
+    /* background-color: linear-gradient(white,gray); */
     padding: 13px 0;
+    margin: 10px auto;
     font-family:'Nunito', sans-serif;
     font-weight: 600;
     font-style: italic;
@@ -289,14 +340,16 @@ nav .nav-links {
 .Projects h2 {
     margin: 5px;
     padding: 5px;
-    margin-top:10%;
+    margin-top: 7.5%;
     
 }
 
 .project-container {
+    display: -webkit-flex;
     display: flex;
     width: 100%;
-    padding: 10px 0; 
+    padding: 10px 0;
+    margin: 10px auto; 
     overflow: auto;
     height: 400px;
 
@@ -305,7 +358,7 @@ nav .nav-links {
 .project {
     position: relative;
     background-color: rgb(0, 0, 0);
-    margin: 10px;
+    margin: auto auto 20px auto;
     /* padding: 10px; */
     height: auto;
 
@@ -323,7 +376,7 @@ nav .nav-links {
     transform: translateX(110px);
 }
 .project:not(:first-child){
-    margin-left: -105px;
+    margin-left: -100px;
 }
 .project .image {
     width: 350px; 
@@ -342,12 +395,15 @@ nav .nav-links {
 }
 /* ------------------------------------------------------------- CONTACT ------------------------------------------------ */
 .Contact {
+    display: -webkit-flex;
     display: flex;
     padding: 13px;
     font-family:'Nunito', sans-serif;
     font-weight: 600;
     font-style: italic;
+    -webkit-flex-direction: row;
     flex-direction: row;
+    -webkit-justify-content: center;
     justify-content: center;
     margin: auto;
 
@@ -360,21 +416,26 @@ nav .nav-links {
 .contact-info, .contact-container {
     /* padding: 1rem; */
     /* margin: 1rem; */
+    display: -webkit-flex;
     display: flex;
     flex:1;
     /* vertical-align:bottom; */
+    -webkit-justify-content: center;
     justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
-
+    
     background-color: rgb(7, 7, 7);
     border: 2px solid black ;
-    box-shadow: -0.5rem 0 1.5rem rgb(117, 110, 110);
+    /* box-shadow: -0.5rem 0 1.5rem rgb(117, 110, 110); */
     /* box-shadow: 8px 9px 9px 8px #222020; */
-    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 2px;
     color: rgb(202, 209, 214);
 }
 
 .contact-container form {
+    -webkit-flex-direction: column;
     flex-direction: column;
     padding: 1rem;
     /* margin: 1rem;*/
@@ -382,66 +443,70 @@ nav .nav-links {
     color: #000;
 }
 .contact-container form input {
+    -webkit-flex-direction: column;
     flex-direction: column;
     padding: 5px;
     margin: 5px 0;
 }
 .contact-container {
     /* background-color: brown; */
-    max-width: 85vw;
-    height: 65vh;
+    max-width: 60vw;
+    height: 75vh;
     z-index: 0;
     transition: 1s;
 
     margin-top: 5%;
-    margin-right: 10%;
+    /* margin-right: 10%; */
     background-color: rgb(247, 250, 252);
     border: 2px solid rgb(245, 245, 245) ;
 
 }
 .contact-info {
+    -webkit-flex-direction: column;
     flex-direction: column;
-    max-width: 35vw;
-    height: 45vh;
+    max-width: 18vw;
+    height: 60vh;
     margin-top: 5%;
 
-    z-index: 1;
+    z-index: 0;
     transition: 1s;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../portfolio/images/bg.jpg") ;
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
 
-    transform: translateX(100px);
+    /* transform: translateX(100px); */
 }
 .info {
+    display: -webkit-flex;
     display: flex;
-    margin: 5px;
-    align-items: center;
-    padding: 5px;
-    height: 25%;
+    height: 10%;
     width: 80%;
-}
-.info img {
-    max-width: 10%;
-    height: 55%;
-    flex: 1;
-    /* padding: 5px; */
-    margin: auto;
-}
-.info p {
-    flex: 2;
-    margin-left: 10%;    
+    margin: 1rem;
     padding: 5px;
-    justify-content: center;
+}
+.info span {
+    width: 100%;
+    height: 100%;
+
+}
+.info .img {
+    width: 2rem;
+    height: 2rem;
+}
+.info span + span {
+    margin-left: 1rem;
+}
+.info span img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
 
 }
 .contact-info h3 {
     margin: 10px;
     padding: 5px;
     width: 80%;
-
-
 }
 /* 
 .contact-container:hover {
@@ -453,7 +518,7 @@ nav .nav-links {
 }  */
 
 .contact-container:hover {
-    transform: scale(1.1,1.1);
+    transform: scale(1.04,1.04);
     z-index: 0;
 }
 /* .contact-info:hover~.project {
