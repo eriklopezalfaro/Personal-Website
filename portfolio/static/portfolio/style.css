@@ -6,10 +6,11 @@
     box-sizing: border-box;
     clear: both
 }
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Josefin+Slab:ital@1&display=swap');
 :root {
-    --titles: 'Nunito', sans-serif;
-    --smaller_text: 'Open Sans', sans-serif;
+    --primary: 'Amatic SC', cursive;
+    --secondary: 'Josefin Slab', serif;
+    --buttons: linear-gradient(to left, #870000, #190a05);
 }
 
 html {
@@ -52,9 +53,9 @@ body::-webkit-scrollbar {
     justify-content: center;
     position: fixed;
     top: 0;
-    background-color: #000;
+    background: black;
     z-index: 1;
-    transition: background-color 1.2s ease;
+    transition: background 1.8s ease;
 }
 .hero-text, .About, .Projects, .contact-info, .contact-container {
     width: 80vw;
@@ -62,6 +63,8 @@ body::-webkit-scrollbar {
 .wrapper {
     width: 100vw;
     padding: 0 10vw;
+    text-transform: uppercase;
+
 }
 .hero-text {
     /* height: 90vh; */
@@ -70,7 +73,9 @@ body::-webkit-scrollbar {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    color: bisque;
+    /* color: var(--buttons); gradients dont work here use clip */
+    font-family: var(--primary);
+    text-transform: uppercase;
 }
 /* ------------------------------------------------------- NAV ------------------------------------------------------- */
 nav {
@@ -114,9 +119,7 @@ nav .nav-links {
 .nav-link {
     color: black;
     padding: 0.7375rem 1.575rem;
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
+    font-family: var(--primary);
     font-size: 1.125rem;
     cursor: pointer;
     text-decoration: none;
@@ -128,10 +131,9 @@ nav .nav-links {
     opacity: 0.67;
 }
 .wrapper.scrolled {
-    background-color: rgba(114, 2, 2, 0.932);
-    /* opacity: 0.6; */
+    background: var(--buttons);
     height: 3.2rem;
-    box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.5);
 }
 .icons.scrolled {
     /* color: rgb(0, 0, 0); */
@@ -143,12 +145,12 @@ nav .nav-links {
     /* padding: 0.5rem 0 0.5rem 1rem; */
 }
 .resume.scrolled {
-    font-size: 0.8rem;
-    height: 1.7rem;
+    font-size: 0.9rem;
+    height: 1.9rem;
     margin: 1rem 0 1rem 1.1rem;
     align-items: center;
 
-    background: rgba(0, 0, 0, 0.829);
+    background:  linear-gradient(to right, #434343 0%, black 100%);
 
 }
 /* --------------------------------- Socail Medias ------------------------------- */
@@ -184,19 +186,17 @@ nav .nav-links {
 
     color: white;
     /* background: linear-gradient(teal, rgb(94, 94, 207)); */
-    background: rgba(146, 0, 0, 0.678);
+    background: var(--buttons);
     border-radius: 2px;
     padding: 0.5rem 0.5rem;
     margin: auto 0 auto 1rem;
 
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
+    font-family: var(--primary);
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
 
-    transition: 0.15s;
+    transition: .19s;
 }
 .nav-link-resume:hover {
     opacity: 0.67;
@@ -215,9 +215,7 @@ nav .nav-links {
 
     padding: 15px;
     margin: 15px;
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
+    font-family:var(--secondary);
     color: aliceblue;
  }
 .hero-text .button {
@@ -227,7 +225,7 @@ nav .nav-links {
     transition: 0.15s;
     text-decoration: none;
 
-    background: rgba(114, 2, 2, 0.932);
+    background: var(--buttons);
     border-radius: 2px;
 
 }
@@ -252,14 +250,15 @@ nav .nav-links {
 
 }
 .intro-text {
-    color: rgba(146, 0, 0, 0.678);
-    font-family: fantasy, sans-serif;
+    /* color: var(--buttons); */
+    color: rgba(119, 0, 0, 0.925);
+    font-family: var(--primary);
     font-size: 3 rem;
 
 }
 
 .slider {
-    background: rgba(146, 0, 0, 0.678);
+    background: var(--buttons);
     position: fixed;
     top: 0;
     left: 0;
@@ -309,18 +308,18 @@ nav .nav-links {
 /* fix: the content button when resized small overflows */
 
 .project-container::-webkit-scrollbar {
-    height: 0.5em;
+    height: 0.8em;
     padding: 2rem;
     margin: 1rem;
 }
 .project-container::-webkit-scrollbar-track {
-    background:linear-gradient(white,silver);
+    background:linear-gradient(rgb(255, 255, 255),rgb(0, 0, 0));
     border-radius: 100vh;
     margin-block: 0.5em;
 
 }
 .project-container::-webkit-scrollbar-thumb {
-    background: linear-gradient(teal, rgb(94, 94, 207));
+    background: var(--buttons);
     /* border: .5em solid linear-gradient(white,silver); */
     border-radius: 100vh;
 }
