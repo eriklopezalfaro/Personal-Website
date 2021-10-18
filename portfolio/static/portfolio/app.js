@@ -16,10 +16,10 @@ $(function(){
         var $resume = $(".resume");
         var $head = $(".hero-image");
 
-        $nav.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()));
-        $logos.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()));
-        $logo.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()));
-        $icons.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()));
-        $resume.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()));
+        $nav.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
+        $logos.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
+        $logo.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
+        $icons.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
+        $resume.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
     });
 });

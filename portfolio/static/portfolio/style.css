@@ -1,18 +1,19 @@
-/* ---------------------------------------------------- HEADER --------------------------------------------------------- */
+/* ---------------------------------------------------- Preset --------------------------------------------------------- */
 /* resets, root variables, whole body */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap');
+
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     clear: both
 }
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Josefin+Slab:ital@1&display=swap');
 :root {
-    --primary: 'Amatic SC', cursive;
-    --secondary: 'Josefin Slab', serif;
-    --buttons: linear-gradient(to left, #870000, #190a05);
+    --primary:  'Poppins', sans-serif;
+    --secondary:  'Poppins', sans-serif;
+    /* --buttons: linear-gradient(to left, #870000, #190a05); */
+    --buttons: linear-gradient(to left, #360033, #0b8793);
 }
-
 html {
     scroll-behavior: smooth;
 }
@@ -35,7 +36,8 @@ body::-webkit-scrollbar {
     display: none;
   }
 .hero-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../portfolio/images/bg.jpg") ;
+    background-image: linear-gradient(rgba(54, 0, 54, 0.35), rgba(24, 168, 168, 0.35)), url("../portfolio/images/bg.jpg");
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../portfolio/images/bg.jpg"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
@@ -53,7 +55,9 @@ body::-webkit-scrollbar {
     justify-content: center;
     position: fixed;
     top: 0;
-    background: black;
+    /* background: black; */
+    background: transparent;
+    box-shadow: 0 .5rem 1rem rgba(255, 255, 255, 0.136);
     z-index: 1;
     transition: background 1.8s ease;
 }
@@ -63,19 +67,20 @@ body::-webkit-scrollbar {
 .wrapper {
     width: 100vw;
     padding: 0 10vw;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 
 }
 .hero-text {
-    /* height: 90vh; */
+    height: 90%;
     width: 80%;
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-30%);
     /* color: var(--buttons); gradients dont work here use clip */
     font-family: var(--primary);
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
+    align-items: center;
 }
 /* ------------------------------------------------------- NAV ------------------------------------------------------- */
 nav {
@@ -183,12 +188,11 @@ nav .nav-links {
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-
     color: white;
     /* background: linear-gradient(teal, rgb(94, 94, 207)); */
     background: var(--buttons);
     border-radius: 2px;
-    padding: 0.5rem 0.5rem;
+    padding: 0.2rem 0.5rem;
     margin: auto 0 auto 1rem;
 
     font-family: var(--primary);
@@ -211,7 +215,7 @@ nav .nav-links {
     opacity: 0.67;
 }
 /* ---------------------------------------------------------- HERO TEXT ----------------------------------------------------- */
-.hero-text h1, .hero-text p, .hero-text .button {
+.hero-text h1, .hero-text p, .hero-text div {
 
     padding: 15px;
     margin: 15px;
@@ -221,7 +225,6 @@ nav .nav-links {
 .hero-text .button {
     color: white;
     padding: 0.6rem 1rem;
-    margin: 30px;
     transition: 0.15s;
     text-decoration: none;
 
@@ -251,7 +254,7 @@ nav .nav-links {
 }
 .intro-text {
     /* color: var(--buttons); */
-    color: rgba(119, 0, 0, 0.925);
+    color: rgba(75, 0, 119, 0.925);
     font-family: var(--primary);
     font-size: 3 rem;
 
@@ -316,7 +319,6 @@ nav .nav-links {
     background:linear-gradient(rgb(255, 255, 255),rgb(0, 0, 0));
     border-radius: 100vh;
     margin-block: 0.5em;
-
 }
 .project-container::-webkit-scrollbar-thumb {
     background: var(--buttons);
@@ -346,7 +348,7 @@ nav .nav-links {
 .project-container {
     display: -webkit-flex;
     display: flex;
-    width: 100%;
+    width: 85%;
     padding: 10px 0;
     margin: 10px auto; 
     overflow: auto;
@@ -409,7 +411,10 @@ nav .nav-links {
     position: relative;
     /* margin-top:15%; */
     /* background-color: rgba(0, 0, 0, 0.925); */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../portfolio/images/snazzy-image\ \(1\).png") ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../portfolio/images/snazzy-image\ \(1\).png");
+    /* background-image: linear-gradient(rgba(54, 0, 54, 0.95), rgba(24, 168, 168, 0.95)); */
+
+
     
 }
 .contact-info, .contact-container {
