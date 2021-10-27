@@ -12,7 +12,8 @@
     --primary:  'Poppins', sans-serif;
     --secondary:  'Poppins', sans-serif;
     /* --buttons: linear-gradient(to left, #870000, #190a05); */
-    --buttons: linear-gradient(to left, #360033, #0b8793);
+    /* --buttons: linear-gradient(to left, #360033, #0b8793); */
+    --buttons: linear-gradient(to bottom right, #360033, #0b8793);
 }
 html {
     scroll-behavior: smooth;
@@ -151,8 +152,10 @@ nav .nav-links {
 }
 .resume.scrolled {
     font-size: 0.9rem;
-    height: 1.9rem;
-    margin: 1rem 0 1rem 1.1rem;
+    /* height: 1.9rem; */
+    height: 50%;
+    margin: auto 0 auto 1rem;
+    /* margin: 1rem 0 1rem 1.1rem; */
     align-items: center;
 
     background:  linear-gradient(to right, #434343 0%, black 100%);
@@ -199,7 +202,6 @@ nav .nav-links {
     font-size: 1rem;
     cursor: pointer;
     text-decoration: none;
-
     transition: .19s;
 }
 .nav-link-resume:hover {
@@ -295,9 +297,8 @@ nav .nav-links {
     align-items: center;
 
     padding: 13px;
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
+    font-family: var(--primary);
+    font-size: 1rem;
 }
 .content {
     margin-top: 7.5%;
@@ -348,7 +349,7 @@ nav .nav-links {
 .project-container {
     display: -webkit-flex;
     display: flex;
-    width: 85%;
+    width: 95%;
     padding: 10px 0;
     margin: 10px auto; 
     overflow: auto;
@@ -398,139 +399,97 @@ nav .nav-links {
 .Contact {
     display: -webkit-flex;
     display: flex;
-    padding: 13px;
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
     -webkit-flex-direction: row;
     flex-direction: row;
     -webkit-justify-content: center;
     justify-content: center;
     margin: auto;
-
-    position: relative;
-    /* margin-top:15%; */
-    /* background-color: rgba(0, 0, 0, 0.925); */
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../portfolio/images/snazzy-image\ \(1\).png");
-    /* background-image: linear-gradient(rgba(54, 0, 54, 0.95), rgba(24, 168, 168, 0.95)); */
-
-
-    
+    /* background-image: linear-gradient(rgba(54, 0, 54, 0.95), rgba(24, 168, 168, 0.95)); */    
 }
-.contact-info, .contact-container {
-    /* padding: 1rem; */
-    /* margin: 1rem; */
-    display: -webkit-flex;
+.Contact .container {
     display: flex;
-    flex:1;
-    /* vertical-align:bottom; */
-    -webkit-justify-content: center;
+    height: 70vh;
+    width: 80vw;
     justify-content: center;
-    -webkit-align-items: center;
+    -webkit-justify-content: center;
     align-items: center;
-    
-    background-color: rgb(7, 7, 7);
-    border: 2px solid black ;
-    /* box-shadow: -0.5rem 0 1.5rem rgb(117, 110, 110); */
-    /* box-shadow: 8px 9px 9px 8px #222020; */
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border-radius: 2px;
-    color: rgb(202, 209, 214);
-}
+    -webkit-align-items: center;
+    margin-top: 4%;
 
-.contact-container form {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    padding: 1rem;
-    /* margin: 1rem;*/
-    margin: auto;
+}
+.contact-form, .contact-info {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+}
+.contact-info .box,.contact-form .form{
+    display: flex;
+    padding: 2rem;
+    flex-direction: column; 
+    height: 50%;
+    width: 100%;
+    font-family: var(--primary);
+    font-size: 1rem;
+    margin-top: 4rem;
+}
+.contact-form {
+    width: 60%;
     color: #000;
+    background: #fff;
 }
-.contact-container form input {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    padding: 5px;
-    margin: 5px 0;
+.contact-form .form form{
+    padding: 2rem 0;
 }
-.contact-container {
-    /* background-color: brown; */
-    max-width: 60vw;
-    height: 75vh;
-    z-index: 0;
-    transition: 1s;
-
-    margin-top: 5%;
-    /* margin-right: 10%; */
-    background-color: rgb(247, 250, 252);
-    border: 2px solid rgb(245, 245, 245) ;
+.contact-form input {
+    border: none;
+    border-bottom: 2px solid black;
+    width: 80%;
+    padding: auto;
+    height: 1.5rem;
+    margin-bottom: 1rem;
+}
+.contact-form label{
+    background: var(--buttons);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 0.9rem;
 
 }
 .contact-info {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    max-width: 18vw;
-    height: 60vh;
-    margin-top: 5%;
-
-    z-index: 0;
-    transition: 1s;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../portfolio/images/bg.jpg") ;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-
-    /* transform: translateX(100px); */
+    width: 40%;
+    color: #fff;
+    background: var(--buttons);
 }
-.info {
-    display: -webkit-flex;
+.contact-info .info {
     display: flex;
-    height: 10%;
-    width: 80%;
-    margin: 1rem;
-    padding: 5px;
+    margin-top: 1rem;
+    width: 100%;
 }
 .info span {
+    height: 3.5rem;
+    display: flex;
+    padding: .2rem;
+    align-items: center;
+    width: 60%;
+    font-size: 0.9rem;
+}
+.info .img{
+    padding: 0.7rem;
+    width: 3rem;
+    height: 100%;
+    margin-right: 1rem;
+}
+.info .img img{
     width: 100%;
     height: 100%;
-
 }
-.info .img {
-    width: 2rem;
-    height: 2rem;
-}
-.info span + span {
-    margin-left: 1rem;
-}
-.info span img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-
-}
-.contact-info h3 {
-    margin: 10px;
-    padding: 5px;
-    width: 80%;
-}
-/* 
-.contact-container:hover {
-    
-    transform: translateX(-260px);
-}
-.contact-info:hover { 
-    transform: translateX(260px);
-}  */
-
-.contact-container:hover {
+.container:hover {
     transform: scale(1.04,1.04);
     z-index: 0;
 }
-/* .contact-info:hover~.project {
-    transform: translateX(-110px);
-} */
-/* .contact-info:not(:first-child){
-    margin-left: -105px;
-} */
 /* neeed to take away hover event and change flex direction for mobile */
 
 /* ----------------------------------- HEADER ----------------------------------- */

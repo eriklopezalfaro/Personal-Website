@@ -26,32 +26,39 @@
 </section>
 <!--------------------------- CONTACT ---------------------------------->
 <section id="contact" class="Contact">
-    <div class="contact-info">
-        <h3>Contact</h3>
-        <div class="info">
-            <span class="img"><img src="{% static 'portfolio/images/github.png' %}" alt=""></span>
-            <span><p>2068984561</p></span>
+   <section class="container">
+        <div class="contact-info">
+            <div class="box">
+                <h2 class="heading">Contact</h2>
+                <div class="info">
+                    <span class="img"><img src="{% static 'portfolio/images/github.png' %}" alt=""></span>
+                    <span>2068984561</span>
+                </div>
+                <div class="info">
+                    <span class="img"><img src="{% static 'portfolio/images/github.png' %}" alt=""></span>
+                    <span>eriklopezalfaro<br>@outlook.com</span>
+                </div>
+            </div>
+
         </div>
-        <div class="info">
-            <span class="img"><img src="{% static 'portfolio/images/github.png' %}" alt=""></span>
-            <span>eriklopezalfaro@outlook.com</span>
+        <div class="contact-form">
+            <div class="form">
+                <h2 class="heading">Message me</h2>
+                <form action="">
+                    <label for="">Name:</label><br>
+                    <input type="text"><br>
+
+                    <label for="">Subject</label><br>
+                    <input type="text"><br>
+                    
+                    <label for="">Message</label><br>
+                    <input type="text"><br>
+
+
+                </form>
+            </div>
         </div>
-
-    </div>
-    <div class="contact-container">
-        <form action="">
-            <label for="">Name:</label><br>
-            <input type="text"><br>
-
-            <label for="">Subject</label><br>
-            <input type="text"><br>
-            
-            <label for="">Message</label><br>
-            <input type="text"><br>
-
-
-        </form>
-    </div>
+   </section>
 </section>
 
 {% endblock %}
