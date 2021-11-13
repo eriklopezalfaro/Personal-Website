@@ -33,9 +33,9 @@ html {
 }
 
 /* ---------------------------------------------------- HEADER --------------------------------------------------------- */
-body::-webkit-scrollbar {
-    /* display: none; */
-  }
+/* body::-webkit-scrollbar {
+    display: none;
+} */
 .hero-image {
     background-image: linear-gradient(rgba(54, 0, 54, 0.35), rgba(24, 168, 168, 0.35)), url("../portfolio/images/bg.jpg");
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../portfolio/images/bg.jpg"); */
@@ -190,7 +190,7 @@ nav .nav-links {
     -webkit-justify-content: flex-start;
     padding: 0.7rem;
     transition: 0.1s ease-in;
-    border-bottom: ;
+    /* border-bottom: ; */
 } 
 .social-media div .icon-text{
     /* transition: 0.2s linear; */
