@@ -589,9 +589,9 @@ nav .nav-links {
         justify-content: center;
         /* padding-right: 1.5rem; */
     }
-    .logo.scrolled {
-        /* padding-right: 0; */
-    }
+    /* .logo.scrolled {
+        padding-right: 0;
+    } */
     .logo, #menu-btn {
         height: 2.5rem;
     }
