@@ -39,25 +39,60 @@
                         <span class="img"><img src="{% static 'portfolio/images/mail_white.svg' %}" alt=""></span>
                         <span class="text">eriklopezalfaro@outlook.com</span>
                     </div>
+                    <div class="info">
+                        <span class="img"><img src="{% static 'portfolio/images/mail_white.svg' %}" alt=""></span>
+                        <span class="text">eriklopezalfaro@outlook.com</span>
+                    </div>
+                    <div class="info">
+                        <span class="img"><img src="{% static 'portfolio/images/mail_white.svg' %}" alt=""></span>
+                        <span class="text">eriklopezalfaro@outlook.com</span>
+                    </div>
                 </div>
             </div>
 
         </div>
         <div class="contact-form">
             <div class="form">
-                <h2 class="heading">Message me</h2>
-                <form action="">
-                    <label for="">Name:</label><br>
-                    <input type="text"><br>
+                <h2 class="text">Message me</h2>
+                
+                <form action="{% url 'contact' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="input-data">
+                            <input type="text" name="first_name" id="first_name" required>
+                            <label for="first_name">First Name</label>
+                        </div>
 
-                    <label for="">Subject</label><br>
-                    <input type="text"><br>
+                        <div class="input-data">
+                            <input type="text" name="last_name" id="last_name" required>
+                            <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-data">
+                            <input type="text" name="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+
+                        <div class="input-data">
+                            <input type="text" name="subject" id="subject" required>
+                            <label for="subject">Subject</label>
+                        </div>
+                    </div>
                     
-                    <label for="">Message</label><br>
-                    <input type="text"><br>
+                    <div class="form-row textarea">
+                        <div class="input-data">
+                            <textarea cols="30" rows="10" name="message" id="message" required></textarea>
+                            <label for="message">Message</label>
+                        </div>
+                    </div>
 
-
+                    <div class="form-row submit-btn">                
+                        <input type="submit" value="Submit">
+                    </div>
                 </form>
+                
             </div>
         </div>
    </section>
