@@ -15,27 +15,18 @@
     </div>
 </section>
 <section class="Skills">
+    <h2>My Skills</h2>
     <div class="skills-list">
-        <h2>My Skills</h2>
         {% for skill in skills %}
         <div class="skill">
             <div class="skill-cont">
                 <img class="image" src="{{ skill.image.url }}" alt="skill">
                 <p>{{ skill.title }}</p>
             </div>
-        </div>
-        {% endfor %}
-    </div>
-</section>
-<section class="Services">
-    <h2>Services</h2>
-    <div class="services-list">
-        {% for service in services %}
-        <div class="service">
-            <img class="image" src="{{ service.image.url }}" alt="service">
-            <div class="details">
-                <h3>{{ service.title }}</h3>
-                <p>{{ service.detail }}</p>
+            <div class="bar-box">
+                <div class="bar">
+                    <p>90%</p>
+                </div>
             </div>
         </div>
         {% endfor %}
@@ -52,6 +43,21 @@
                 <h3>{{ project.title }}</h3>
                 <p><span class="technologies">Technologies:</span> {{ project.description }}</p>
                 <a href="{{ project.url }}">Github</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+<!----------------------------SERVICES------------------------->
+<section class="Services">
+    <h2>Services</h2>
+    <div class="services-list">
+        {% for service in services %}
+        <div class="service">
+            <img class="image" src="{{ service.image.url }}" alt="service">
+            <div class="details">
+                <h3>{{ service.title }}</h3>
+                <p>{{ service.detail }}</p>
             </div>
         </div>
         {% endfor %}
