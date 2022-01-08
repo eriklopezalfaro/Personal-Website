@@ -18,7 +18,8 @@
 html {
     scroll-behavior: smooth;
 }
-.hero-image, .About, .Projects, .Contact {
+/* .Projects,  */
+.hero-image{
     display: -webkit-flex;
     display: flex;
     margin: auto;
@@ -26,8 +27,7 @@ html {
     align-items: center;
     -webkit-flex-direction: column;
     flex-direction: column;
-    height: 100vh;
-    min-height: 31rem;
+    height: clamp(34rem, 100vh, 57rem);
     flex-basis: 100vw;
     position: relative;
 }
@@ -58,9 +58,10 @@ html {
     z-index: 1;
     transition: background 1.8s ease;
 }
-.hero-text, .About, .Projects, .contact-container {
+.About, .Projects, .contact-container, .Skills, .Services{
     width: min(80vw, 1200px);
-    min-height: 800px;
+    /* min-height: 800px; */
+
 }
 .wrapper {
     width: 100vw;
@@ -69,12 +70,16 @@ html {
 .hero-text {
     display: flex;
     flex-direction: column;
-    height: 90%;
+    height: 100%;
     width: 80%;
+    /* margin: auto; */
     /* clip background */
     font-family: var(--primary);
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+}
+body {
+    /* background: #000; */
 }
 /* ------------------------------------------------------- NAV ------------------------------------------------------- */
 nav {
@@ -186,18 +191,20 @@ nav .nav-links {
 /* --------------------------------- Socail Medias ------------------------------- */
 .social-media {
     position: fixed;
-    top: 35%;
+    top: 42%;
     left: 0;
     width: 2.7rem;
-    height: 3rem;
+    height: 9rem;
     z-index: 500;
     font-family: var(--primary);
+    background: var(--buttons);
 }
 .social-media div {
     display: flex;
     height: 100%;
-    background: #040D21;
+    /* background: #040D21; */
     width: 100%;
+    height: 3rem;
     -webkit-align-items: center;
     align-items: center;
     justify-content: flex-start;
@@ -222,6 +229,8 @@ nav .nav-links {
 .social-media div:hover{
     opacity: 0.9;
     width: 6.5rem;
+    background: var(--buttons);
+
 }
 .social-media div:hover .icon-text{
     display: flex;
@@ -239,11 +248,11 @@ nav .nav-links {
 .social-media div:nth-child(2){
     /* background: #0966C2; */
     /* background: #184EA6; */
-    background: #017BB6;
+    /* background: #017BB6; */
 }
 .social-media div:nth-child(3){
     border-radius: 0 0 2px 0;
-    background: #013a68;
+    /* background: #013a68; */
 }
 .social-media-icon-1 img, .social-media-icon-2 img {
     width: 100%;
@@ -252,7 +261,7 @@ nav .nav-links {
     padding-left: 1px;
 }
 /* ---------------------------------------------------------- HERO TEXT ----------------------------------------------------- */
-.hero-text h1, .hero-text p, .hero-text a {
+.hero-text h1, .hero-text p, .hero-text a, .hero-text h3 {
     margin-bottom: 1rem;
     font-family:var(--secondary);
     color: aliceblue;
@@ -267,7 +276,10 @@ nav .nav-links {
     font-family: var(--primary);
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 1rem;
+    margin: 1rem 1rem 0 0;
+}
+.hero-text div {
+    margin-top: 0.7rem;
 }
 .hero-text .button:hover {
     opacity: 0.8;
@@ -275,6 +287,8 @@ nav .nav-links {
 /* ------------------------------------------------------------ JS Animation ----------------------------------------------------- */
 .intro {
     background: black;
+    /* background: linear-gradient(to bottom right, #0b8793, #360033); */
+
     position: fixed;
     top: 0;
     left: 0;
@@ -290,12 +304,29 @@ nav .nav-links {
     z-index: 999;
 }
 .intro-text {
-    /* color: var(--buttons); */
-    color: rgba(75, 0, 119, 0.925);
+    /* color: rgba(177, 165, 184, 0.925); */
     font-family: var(--primary);
 }
-.logo-img {
+.intro-text .text {
+    width: fit-content;
+    background: var(--buttons);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.logo-img{
     height: 20vh;
+    width: fit-content;
+    margin: auto;
+}
+center {
+    margin-top: 1.5rem;
+}
+center a {
+    color: #0b8793;
+}
+center h2 {
+    margin-bottom: 1.5rem;
 }
 .logo-img img {
     object-fit: contain;
@@ -324,26 +355,136 @@ nav .nav-links {
     display: inline-block;
 }
 /* ------------------------------------------------------------ ABOUT ----------------------------------------------------- */
-.About { 
-    display: -webkit-flex;
+.About, .Skills, .Services { 
     display: flex;
-    -webkit-flex-direction: column;
     flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
-    padding: 13px;
+    margin: auto;
+    /* padding: 13px; */
     font-family: var(--primary);
     font-size: 1rem;
+    min-height: fit-content;
 }
 .content {
-    margin-top: 7.5%;
+    display: flex;
+    flex-wrap: wrap;
+    height: max(30vh, 300px);
+    /* border: 1px solid black; */
+    margin-bottom: 2rem;
+}
+.me, .bio {
+    /* min-width: 350px; */
+    width: 50%;
+    padding: 1rem 0;
+    font-family: var(--primary);
 }
 .About h2 {
-    margin: 5px;
-    padding: 10px;
+    justify-content: flex-start;
+    margin-top: 7.5%;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+.me img {
+    width: 85%;
+    height: 85%;
+    margin: auto 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* ---------------------------------------------------------- SKILLS --------------------------------------------------- */
+.Skills {
+    /* background: var(--buttons); */
+}
+.Skills h2 {
+    justify-content: flex-start;
+    /* margin-bottom: 1rem; */
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 1.5rem;
+}
+.skill {
+    width: 15rem;
+    /* width: 30%; */
+    height: 3rem;
+    /* margin: 0.5rem; */
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* background: var(--buttons); */
+    background:  linear-gradient(to right, #434343 0%, black 100%);
+    color: #fff;
+    border-radius: 2px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.skill-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    /* margin: auto; */
+    text-align: center;
+}
+.skill-cont .image {
+    height: 2rem;
+    object-fit: contain;
+    padding: 0 1rem;
+
+}
+/* ---------------------------------------------------------- SERVICES --------------------------------------------------- */
+.Services {
+    /* background: var(--buttons); */
+}
+.Services h2 {
+    justify-content: flex-start;
+    margin-bottom: 1.5rem;
+    width: fit-content;
+}
+.Services .services-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
+}
+.Services .service {
+    width: 16rem;
+    /* width: 28%; */
+    height: 19rem;
+    /* margin: 0.5rem; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color:#000;
+    border-radius: 2px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background: var(--buttons);
+}
+.Services .details {
+    height: 60%;
+    padding: 0 1rem;
+    text-align: center;
+    background: #fff;
+
+}
+.Services .image {
+    height: 40%;
+    width: 100%;
+    object-fit: contain;
+    padding: 2rem;
+    /* z-index: 99; */
+}
+.Services .details h3 {
+    padding: 1rem 0;
 }
 /* ---------------------------------------------------------- PROJECTS --------------------------------------------------- */
-.project-container::-webkit-scrollbar {
+/* .project-container::-webkit-scrollbar {
     height: 0.65em;
     padding: 2rem;
     margin: 1rem;
@@ -356,7 +497,7 @@ nav .nav-links {
 .project-container::-webkit-scrollbar-thumb {
     background: var(--buttons);
     border-radius: 100vh;
-}
+} */
 
 .Projects {
     display: -webkit-flex;
@@ -366,58 +507,78 @@ nav .nav-links {
     /* background-color: linear-gradient(white,gray); */
     padding: 13px 0;
     margin: 10px auto;
-    font-family:'Nunito', sans-serif;
+    /* font-family:'Nunito', sans-serif;
     font-weight: 600;
-    font-style: italic;
-    min-height: 33rem;
+    font-style: italic; */
+    /* min-height: 33rem; */
 }
 .Projects h2 {
-    margin: 5px;
-    padding: 5px;
+    margin: 1rem 0;
+    padding: 1rem 0;
     margin-top: 7.5%;
+    font-family: var(--primary);
 }
 .project-container {
     display: -webkit-flex;
     display: flex;
-    width: 85%;
+    width: 100%;
     padding: 10px 0;
-    margin: 10px auto; 
-    overflow: auto;
-    min-height: 24rem;
-    height: 400px; 
+    margin: 1rem 0; 
+    /* overflow: auto; */
+    flex-wrap: wrap;
+    gap: 2.2rem 0;
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+
+    /* height: 400px;  */
 }
 .project {
     position: relative;
-    background-color: rgb(0, 0, 0);
-    margin: auto auto 20px auto;
-    height: auto;
-    background: #000;
-    box-shadow: -2rem 0 2.5rem rgba(255, 254, 254, 0.65);
+    /* background-color: rgb(0, 0, 0); */
+    /* background:  linear-gradient(to right, #242424 0%, black 100%); */
+    background: var(--buttons);
+    /* margin: auto auto 20px auto; */
+    /* height: auto; */
+    height: 25rem;
+    box-shadow: -1rem 0 2.5rem rgba(255, 254, 254, 0.65);
     transition: .1s;
+    width: 33%;
+}
+.project-cont {
+    height: 100%;
+    width: 100%;
 }
 .project:hover {
-    transform: translateY(-1rem);
+    /* transform: translateY(-0.5rem); */
+    transform: translate(-1rem, -1.5rem);
+    /* transform: translateY(-1rem); */
 }
 .project:hover~.project {
-    transform: translateX(110px);
+    /* transform: translateX(110px); */
+    /* transform: translateX(60px); nope */
 }
 .project:not(:first-child){
-    margin-left: -100px;
+    /* margin-left: -100px; */
 }
 .project .image {
-    width: 350px; 
-    height: 240px;
+    /* width: 350px; 
+    height: 240px; */
+    height: 60%;
+    width: 100%;
     object-fit: cover;
-    border-radius: 12px 12px 0px 0px;
+    /* border-radius: 12px 12px 0px 0px; */
 
 }
-.project h3, .project p {
-    margin: 5px;
-    padding: 10px;
-    font-family:'Nunito', sans-serif;
-    font-weight: 600;
-    font-style: italic;
+.project h3, .project p, .project a {
+    margin: 0 1rem;
+    padding-top: 1rem;
+    font-family: var(--primary);
+    /* font-weight: 600; */
+    /* font-style: italic; */
     color: aliceblue;
+}
+.project a {
+    color: #0b8793;
 }
 /* ------------------------------------------------------------- CONTACT ------------------------------------------------ */
 .Contact {
@@ -427,30 +588,40 @@ nav .nav-links {
     flex-direction: row;
     -webkit-justify-content: center;
     justify-content: center;
+    align-items: center;
     margin: auto;
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../portfolio/images/snazzy-image\ \(1\).png"); */
-    background: #000; 
+    /* background: #000; */
+    /* background: var(--buttons); */
     /* box-shadow: 0rem 0rem 0.8rem 0.8rem rgba(0, 0, 0, 0.616); */
-    /* min-height: 100vh; */
+    /* min-height: 700px; */
+    /* height: max(40rem, 100vh); */
+    height: clamp(34rem, 100vh, 57rem);
 }
 .Contact .container {
     display: flex;
-    width: min(80vw, 1200px);
+    width: min(80vw, 1000px);
+    height: clamp(30rem, 60vh, 32rem);
     justify-content: center;
     -webkit-justify-content: center;
     align-items: center;
     -webkit-align-items: center;
-    margin-top: 4%;
+    /* margin-top: 6%; */
     /* box-shadow: 0rem 0rem 0.8rem 0.8rem rgba(0, 0, 0, 0.616); */
+    /* height: max(60vh, 485px); */
 }
 .contact-form, .contact-info {
     display: flex;
     /* height: 80vh; */
-    height: min(80vh, 600px);
+    height: 100%;
+    /* height: max(80vh, 600px); */
+
 }
 .contact-info .box,.contact-form .form{
     padding: 3rem;
-    height: 100%;
+    /* height: 100%; */
+    /* height: max(80vh, 600px); */
+
     width: 100%;
     font-family: var(--primary);
     font-size: 1rem;
@@ -590,7 +761,7 @@ footer p {
     }
     .Contact .container{
         flex-direction: column;
-        min-height: 80%;
+        min-height: max(80%,800px);
         margin-top: 3rem;
     }
     .contact-info,.contact-form {

@@ -10,3 +10,18 @@ class Project(models.Model):
     
     def __str__(self):
         return self.title
+
+class Skill(models.Model):
+    title = models.CharField(max_length=25)
+    image = models.ImageField(upload_to='portfolio/images/', blank=True)
+
+    def __str__(self):
+        return self.title
+    
+class Service(models.Model):
+    title = models.CharField(max_length=25)
+    detail = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='portfolio/images/', blank=True)
+
+    def __str__(self):
+        return self.title

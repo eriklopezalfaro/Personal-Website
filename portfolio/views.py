@@ -1,5 +1,5 @@
 from django.shortcuts import redirect, render
-from .models import Project
+from .models import *
 from django.conf import settings
 from django.core.mail import message, send_mail
 # Create your views here.
@@ -7,8 +7,10 @@ from django.core.mail import message, send_mail
 
 def home(request):
     projects = Project.objects.all()
+    skills = Skill.objects.all()
+    services = Service.objects.all()
     
-    return render(request, 'portfolio/index.html', {'projects':projects})
+    return render(request, 'portfolio/index.html', {'projects':projects, 'skills':skills, 'services':services})
 
 def contact(request):
     if request.method == 'POST':
