@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="{% static '/portfolio/images/logos/ERIK LOPEZ-logo.png' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'portfolio/style.css' %}">
-    <title>Erik Lopez | Software Developer</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>Erik Lopez | Developer</title>
 </head>
 <body>
     {% load static %}
@@ -42,7 +43,7 @@
         <div class="hero-text">
             <p>Hello and Welcome,</p>
             <h1>I'm Erik Lopez</h1>
-            <h3>Software Developer | Website Developer | Full Stack</h3>
+            <h3>Software Developer | Full Stack Developer</h3>
             
             <div><a href="#about" class="button">See more</a><a href="#contact" class="button">Contact Me</a></div>
         </div>
@@ -70,13 +71,15 @@
 
     <!-- end animation -->
     
+    <div class="body">
     {% block content %}{% endblock %}
+    </div>
     <footer>
         <p>&copy; 2021 Erik Lopez-Alfaro</p>
-        <p>All Rights Reserved</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{% static 'portfolio/app.js' %}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

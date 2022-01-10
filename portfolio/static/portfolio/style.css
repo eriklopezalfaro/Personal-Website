@@ -30,6 +30,8 @@ html {
     height: clamp(34rem, 100vh, 57rem);
     flex-basis: 100vw;
     position: relative;
+    box-shadow: 2rem 0 1rem rgba(32, 32, 32, 0.65);
+
 }
 /* ---------------------------------------------------- HEADER --------------------------------------------------------- */
 .hero-image {
@@ -55,7 +57,7 @@ html {
     top: 0;
     background: transparent;
     box-shadow: 0 .5rem 1rem rgba(255, 255, 255, 0.136);
-    z-index: 1;
+    z-index: 10;
     transition: background 1.8s ease;
 }
 .About, .Projects, .contact-container, .Skills, .Services{
@@ -341,6 +343,7 @@ center h2 {
 }
 /* ------------------------------------------------------------ ABOUT ----------------------------------------------------- */
 .About, .Skills, .Services { 
+    /* visibility: hidden; */
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -349,6 +352,30 @@ center h2 {
     font-size: 1rem;
     min-height: fit-content;
 }
+.Projects {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    padding: 13px 0;
+    margin: 0 auto;
+    /* visibility: hidden; */
+    /* height: clamp(34rem, 100vh, 57rem); */
+}
+/* .About.scrolled, .Skills.scrolled, .Services.scrolled, .Projects.scrolled {
+    animation: fadeIn 2s;
+    visibility: visible;
+}
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+} */
 .content {
     display: flex;
     flex-wrap: wrap;
@@ -480,14 +507,7 @@ center h2 {
     border-radius: 100vh;
 } */
 
-.Projects {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    padding: 13px 0;
-    margin: 0 auto;
-}
+
 .Projects h2 {
     margin-bottom: 1rem;
     padding: 1rem 0;
@@ -518,12 +538,24 @@ center h2 {
     height: 100%;
     width: 100%;
 }
-.project:hover {
-    /* transform: translateY(-1rem); */
-    transform: translate(-1rem, -1.5rem);
-    box-shadow: -1rem 0 2.5rem rgba(255, 254, 254, 0.65);
 
+.project:hover {
+    /* .project-container:hover > .project:hover { */
+        
+        transform: scale(1.04,1.04);
+        z-index: 1;
+        /* transform: translate(-1rem, -1.5rem); */
+        box-shadow: 0 0 5rem rgba(255, 254, 254, 0.65);
+        /* box-shadow: -1rem 0 2.5rem rgba(255, 254, 254, 0.65); */
 }
+/* .project-container > .project { */
+/* .project-container .project:not(:hover){
+
+    transform: scale(.9,.9);
+    box-shadow: 0 0 5rem rgba(255, 254, 254, 0.65);
+} */
+
+
 /* .project:hover~.project {
     transform: translateX(110px); 
 }

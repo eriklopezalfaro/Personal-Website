@@ -3,7 +3,7 @@
 {% block content %}
 {% load static %}
 <!--------------------------- ABOUT ---------------------------------->
-<section id="about" class="About">
+<section id="about" class="About " data-aos="fade-up">
     <h2>About Me</h2>
     <div class="content">
         <div class="me">
@@ -14,7 +14,7 @@
         </div>
     </div>
 </section>
-<section class="Skills">
+<section class="Skills" data-aos="fade-up">
     <h2>My Skills</h2>
     <div class="skills-list">
         {% for skill in skills %}
@@ -33,7 +33,7 @@
     </div>
 </section>
 <!--------------------------- PROJECTS ---------------------------------->
-<section id="projects" class="Projects">
+<section id="projects" class="Projects" data-aos="fade-up">
     <h2>Projects</h2>
     <div class="project-container">
         {% for project in projects %}
@@ -49,7 +49,7 @@
     </div>
 </section>
 <!----------------------------SERVICES------------------------->
-<section class="Services">
+<section class="Services" data-aos="fade-up">
     <h2>Services</h2>
     <div class="services-list">
         {% for service in services %}
@@ -64,7 +64,7 @@
     </div>
 </section>
 <!--------------------------- CONTACT ---------------------------------->
-<section id="contact" class="Contact">
+<section id="contact" class="Contact" data-aos="fade-up">
    <section class="container">
         <div class="contact-info">
             <div class="box">

@@ -1,3 +1,5 @@
+AOS.init();
+
 // using gsap to animate the sliders
 const tl = gsap.timeline({defaults: {ease: "power1.out"}})
 
@@ -16,11 +18,22 @@ $(function(){
         var $resume = $(".resume");
         var $head = $(".hero-image");
 
+        // var $about = $(".About");
+        // var $skills = $(".Skills");
+        // var $services = $(".Services");
+        // var $projects = $(".Projects");
+
         $nav.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
         $logos.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
         $logo.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
         $icons.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
         $resume.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-75));
+
+        // $about.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-300));
+        // $skills.toggleClass('scrolled', $(this).scrollTop() >= ($head.height()-200));
+        // $projects.toggleClass('scrolled', $(this).scrollTop() >= ($projects.height()));
+        // $services.toggleClass('scrolled', $(this).scrollTop() >= ($projects.height()+260));
+
     });
 });
 
