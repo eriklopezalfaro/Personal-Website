@@ -3,20 +3,20 @@
 {% block content %}
 {% load static %}
 <!--------------------------- ABOUT ---------------------------------->
-<section id="about" class="About " data-aos="fade-up">
-    <h2>About Me</h2>
+<section id="about" class="About">
+    <h2 data-aos="fade-up" data-aos-duration="2500">About Me</h2>
     <div class="content">
-        <div class="me">
+        <div class="me" data-aos="fade-up" data-aos-duration="2500">
             <img src="{% static 'portfolio/images/hero.jpg' %}" alt="Picture of me">
         </div>
-        <div class="bio">
+        <div class="bio" data-aos="fade-up" data-aos-duration="2500">
             <p>My name is Erik Lopez. I am a Full Stack Developer based in Seattle, Washington. I create stylish and modern websites, web services, and software applications using a variety of modern technologies. I'm very passionate about designing and developing websites that brings your ideas to life.</p>
         </div>
     </div>
 </section>
-<section class="Skills" data-aos="fade-up">
-    <h2>My Skills</h2>
-    <div class="skills-list">
+<section class="Skills">
+    <h2 data-aos="fade-up" data-aos-duration="2500">My Skills</h2>
+    <div class="skills-list" data-aos="fade-up" data-aos-duration="2500">
         {% for skill in skills %}
         <div class="skill">
             <div class="skill-cont">
@@ -33,27 +33,27 @@
     </div>
 </section>
 <!--------------------------- PROJECTS ---------------------------------->
-<section id="projects" class="Projects" data-aos="fade-up">
-    <h2>Projects</h2>
+<section id="projects" class="Projects">
+    <h2 data-aos="fade-up" data-aos-duration="2500">Projects</h2>
     <div class="project-container">
         {% for project in projects %}
-        <div class="project">
+        <div class="project" data-aos="fade-up" data-aos-duration="2500">
+            <img class="image" src="{{ project.image.url }}" alt="">
             <div class="project-cont">
-                <img class="image" src="{{ project.image.url }}" alt="">
                 <h3>{{ project.title }}</h3>
                 <p><span class="technologies">Technologies:</span> {{ project.description }}</p>
-                <a href="{{ project.url }}">Github</a>
+                <a href="{{ project.url }}">View Github repo &#10140;</a>
             </div>
         </div>
         {% endfor %}
     </div>
 </section>
 <!----------------------------SERVICES------------------------->
-<section class="Services" data-aos="fade-up">
-    <h2>Services</h2>
+<section class="Services">
+    <h2 data-aos="fade-up" data-aos-duration="2500">Services</h2>
     <div class="services-list">
         {% for service in services %}
-        <div class="service">
+        <div class="service" data-aos="fade-up" data-aos-duration="2500">
             <img class="image" src="{{ service.image.url }}" alt="service">
             <div class="details">
                 <h3>{{ service.title }}</h3>
@@ -64,7 +64,7 @@
     </div>
 </section>
 <!--------------------------- CONTACT ---------------------------------->
-<section id="contact" class="Contact" data-aos="fade-up">
+<section id="contact" class="Contact" data-aos="fade-up" data-aos-duration="2500">
    <section class="container">
         <div class="contact-info">
             <div class="box">

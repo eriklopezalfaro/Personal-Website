@@ -22,9 +22,9 @@
         </div>
         <div class="wrapper">
             <div id="menu-btn">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+                <span class="line one"></span>
+                <span class="line two"></span>
+                <span class="line three"></span>
             </div>
             <a href="" class="logo"><img src="{% static '/portfolio/images/logos/ERIK LOPEZ-logos_white.png' %}" alt="Logo"></a>
             <nav class="navbar">
@@ -41,8 +41,8 @@
             </section>
         </div>
         <div class="hero-text">
-            <p>Hello and Welcome,</p>
-            <h1>I'm Erik Lopez</h1>
+            <p>Hello and Welcome</p>
+            <h1>I'm <span class="name">Erik Lopez</span></h1>
             <h3>Software Developer | Full Stack Developer</h3>
             
             <div><a href="#about" class="button">See more</a><a href="#contact" class="button">Contact Me</a></div>
@@ -81,5 +81,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js" integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{% static 'portfolio/app.js' %}"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

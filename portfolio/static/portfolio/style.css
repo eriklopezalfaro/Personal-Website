@@ -74,7 +74,29 @@ html {
     width: 80%;
     font-family: var(--primary);
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    /* align-items: flex-start; */
+}
+.hero-text .name {
+    animation: flicker 1.5s infinite alternate;
+}
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #0fa,;
+        /* 0 0 19px #fff; */
+    }
+    
+    20%, 24%, 55% {
+        /* text-shadow: none; */
+        text-shadow: 
+        0 0 11px #fff,
+        0 0 16px #0fa;
+
+
+    }
 }
 /* ------------------------------------------------------- NAV ------------------------------------------------------- */
 nav {
@@ -110,12 +132,41 @@ nav {
 /* ---------------------------------------------------- Nav links ------------------------------------------------- */
 #menu-btn{
     display: none;
+
+    /* margin: auto;
+    z-index: 10;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center; */
+
 }
-#menu-btn .line{
-    width: 1.8rem;
+#menu-btn span{
+    position: absolute;
+    display: block;
     height: 0.2rem;
-    background-color: rgb(255, 255, 255);
-    margin-top: 0.4rem;
+    width: 40px;
+    background-color: #fff;
+    transform: rotate(0);
+    transition: all 200ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+span.one {
+    top: 0px;
+}
+span.two {
+    top: 12px;
+}
+span.three {
+    top: 24px;
+}
+#menu-btn.clicked .one {
+    transform: translateY(12px) rotate(45deg);
+}
+#menu-btn.clicked .two {
+    opacity: 0;
+}    
+#menu-btn.clicked .three {
+    transform: translateY(-12px) rotate(-45deg);
 }
 nav .nav-links {
     -webkit-align-items: center;
@@ -382,9 +433,14 @@ center h2 {
     height: max(30vh, 300px);
     margin-bottom: 2rem;
 }
-.me, .bio {
-    width: 50%;
+.me {
+    width: 40%;
     padding: 1rem 0;
+    font-family: var(--primary);
+}
+.bio {
+    width: 60%;
+    padding: 1rem 0 0 1rem;
     font-family: var(--primary);
 }
 .About h2 {
@@ -394,8 +450,8 @@ center h2 {
     width: fit-content;
 }
 .me img {
-    width: 85%;
-    height: 85%;
+    width: 100%;
+    height: 100%;
     margin: auto 0;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
@@ -403,8 +459,10 @@ center h2 {
 /* ---------------------------------------------------------- SKILLS --------------------------------------------------- */
 .Skills h2 {
     justify-content: flex-start;
-    width: 100%;
+    width: fit-content;
+    /* width: 100%; */
     padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 .skills-list {
     display: flex;
@@ -452,7 +510,7 @@ center h2 {
 /* ---------------------------------------------------------- SERVICES --------------------------------------------------- */
 .Services h2 {
     justify-content: flex-start;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     width: fit-content;
 }
 .Services .services-list {
@@ -510,15 +568,16 @@ center h2 {
 
 .Projects h2 {
     margin-bottom: 1rem;
-    padding: 1rem 0;
+    padding-top: 1rem;
     /* margin-top: 7.5%; */
     font-family: var(--primary);
+    width: fit-content;
 }
 .project-container {
     display: -webkit-flex;
     display: flex;
     width: 100%;
-    padding: 10px 0;
+    /* padding: 10px 0; */
     margin: 1rem 0; 
     flex-wrap: wrap;
     gap: 2.2rem 0;
@@ -526,17 +585,23 @@ center h2 {
 }
 .project {
     position: relative;
-    background:  linear-gradient(to right, #242424 0%, black 100%);
-    /* background: var(--buttons); */
-    
-    height: 25rem;
+    /* background:  linear-gradient(to right, #242424 0%, black 100%); */
+    display: flex;
+    flex-direction: row;
+    height: 20rem;
+    border-radius: 2px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     /* box-shadow: -1rem 0 2.5rem rgba(255, 254, 254, 0.65); */
     transition: .1s;
-    width: 33%;
+    /* width: 33%; */
+    width: 100%;
 }
 .project-cont {
+    background: var(--buttons);
+    display: flex;
+    flex-direction: column;
     height: 100%;
-    width: 100%;
+    width: 45%;
 }
 
 .project:hover {
@@ -563,12 +628,12 @@ center h2 {
     margin-left: -100px;
 } */
 .project .image {
-    height: 60%;
-    width: 100%;
+    height: 100%;
+    width: 55%;
     object-fit: cover;
 }
 .project h3, .project p, .project a {
-    margin: 0 1rem;
+    margin: 1.5rem;
     padding-top: 0.5rem;
     font-family: var(--primary);
     color: aliceblue;
@@ -726,6 +791,13 @@ footer p {
     padding: 0.1rem 0;
     color: #fff;
 }
+
+.About h2, .Projects h2, .Skills h2, .Services h2, .skill-cont p {
+    background: var(--buttons);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 /* ----------------------------------------------------- MEDIA QUERIES ------------------------------------------------------ */
 /* need to take away hover event and change flex direction for mobile */
 /* 730x500 */
@@ -783,39 +855,65 @@ footer p {
         flex-direction: column;
     }
     #menu-btn {
-        display: flex;
-        flex: 1;
+        /* display: flex;
         flex-direction: column;
+        align-items: center; */
+        height: 1.6rem;
+        margin: auto;
+        flex: 1;
+        z-index: 10;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
     }
     .logo {
         flex: 2;
         justify-content: center;
 
     }
-    .logo, #menu-btn {
+    .logo {
         height: 2.5rem;
     }
     .navbar {
         position: absolute;
         right: -110%;
         top: 0;   
+        background: black 100%;
+        opacity: 0.85;
     }
     .wrapper {
-        opacity: 0.95;
+        opacity: 0.70;
         height: 4rem;
     }
+    .wrapper.active {
+        /* background: transparent; */
+        /* height: 3.2rem;
+        box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.5); */
+        background: black 100%;
+        opacity: 0.85; 
+        transition: none;
+    }
     .navbar.active {
+        height: 100vh;
         right: 0;
         width: 100%;
         top: 100%;
-        background: black 100%;
-        opacity: 0.95;
+
     }
     .nav-links{
+        height: 100%;
         flex-direction: column;
+        margin-top: 0;
     }
     .nav-links li {
-        margin-bottom: 1rem;
+        display: flex;
+        align-items:flex-start;
+        height: 25%;
+        margin: 0 1rem 1rem 1rem;
+    }
+    .nav-links .icons {
+        font-size: xx-large;
     }
     .hero-image, .About, .Projects, .Contact, .wrapper {
         min-width: 500px;
