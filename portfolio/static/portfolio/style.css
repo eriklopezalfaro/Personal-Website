@@ -75,7 +75,7 @@ html {
     font-family: var(--primary);
     justify-content: center;
     align-items: center;
-    /* align-items: flex-start; */
+    font-size: x-large;
 }
 .hero-text .name {
     animation: flicker 1.5s infinite alternate;
@@ -239,64 +239,74 @@ nav .nav-links {
     position: fixed;
     top: 42%;
     left: 0;
-    width: 2.7rem;
-    height: 9rem;
+    width: 3.5rem;
+    height: 10.5rem;
     z-index: 500;
     font-family: var(--primary);
-    background: var(--buttons);
+    /* background: var(--buttons); */
+    background:  linear-gradient(to right, #434343 0%, black 100%);
+
+    border-radius: 0 3px 3px 0;
+
 }
 .social-media div {
     display: flex;
     height: 100%;
     width: 100%;
-    height: 3rem;
+    height: 3.5rem;
     -webkit-align-items: center;
     align-items: center;
     justify-content: flex-start;
     -webkit-justify-content: flex-start;
-    padding: 0.7rem;
+    padding: 1rem;
     transition: 0.1s ease-in;
-} 
+    border-radius: 0 3px 3px 0;
+
+}
 .social-media div .icon-text{
     display: none;
 } 
 .social-media div img{
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 .social-media .icon {
     position: absolute;
-    left: 1;
+    left: 1.5;
     display: flex;
     justify-content: center;
-}
-.social-media div:hover{
-    opacity: 0.9;
-    width: 6.5rem;
-    background: var(--buttons);
+    transition: 0.1s ease-in;
 
 }
-.social-media div:hover .icon-text{
+.social-media div:hover{
+    /* opacity: 0.9; */
+    width: 7.2rem;
+    /* background: var(--buttons); */
+    background:  linear-gradient(to right, #434343 0%, black 100%);
+
+}
+/* .social-media div:hover .icon-text{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 1.85rem;
+    padding-left: 3rem;
     color: #fff;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-decoration: none;
     text-transform: uppercase;
-}
-.social-media div:nth-child(1){
-    border-radius: 0 2px 0 0;
-}
-/* .social-media div:nth-child(2){
-    background: #0966C2;
-    background: #184EA6;
-    background: #017BB6;
 } */
-.social-media div:nth-child(3){
-    border-radius: 0 0 2px 0;
+.social-media div:hover .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 3.7rem;
 }
+/* .social-media div:nth-child(1){
+    border-radius: 0 22px 0 0;
+}
+.social-media div:nth-child(3){
+    border-radius: 0 0 22px 0;
+} */
 .social-media-icon-1 img, .social-media-icon-2 img {
     width: 100%;
     height: 100%;
@@ -346,6 +356,15 @@ nav .nav-links {
 .intro-text {
     /* color: rgba(177, 165, 184, 0.925); */
     font-family: var(--primary);
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    font-size: large;
 }
 .intro-text .text {
     width: fit-content;
@@ -402,6 +421,8 @@ center h2 {
     font-family: var(--primary);
     font-size: 1rem;
     min-height: fit-content;
+    width: min(80vw, 1000px);
+
 }
 .Projects {
     display: -webkit-flex;
@@ -410,6 +431,8 @@ center h2 {
     flex-direction: column;
     padding: 13px 0;
     margin: 0 auto;
+    width: min(80vw, 1000px);
+
     /* visibility: hidden; */
     /* height: clamp(34rem, 100vh, 57rem); */
 }
@@ -430,17 +453,27 @@ center h2 {
 .content {
     display: flex;
     flex-wrap: wrap;
-    height: max(30vh, 300px);
+    height: max(40vh, 400px);
     margin-bottom: 2rem;
+    
 }
 .me {
     width: 40%;
+    height: 100%;
     padding: 1rem 0;
     font-family: var(--primary);
+    /* vertical-align:middle; */
+    /* text-align: center; */
+    /* -webkit-filter: blur(20px);
+    -moz-filter: blur(20px);
+    -o-filter: blur(20px);
+    -ms-filter: blur(20px);
+    filter: blur(20px); */
 }
 .bio {
     width: 60%;
-    padding: 1rem 0 0 1rem;
+    /* padding: 1rem 2rem 0 0; */
+    padding: 1rem 0 0 3rem;
     font-family: var(--primary);
 }
 .About h2 {
@@ -450,10 +483,11 @@ center h2 {
     width: fit-content;
 }
 .me img {
+    box-shadow: rgba(100, 100, 111, 0.555) 7px 7px 39px 5px;
+    object-fit: cover;
     width: 100%;
     height: 100%;
     margin: auto 0;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 /* ---------------------------------------------------------- SKILLS --------------------------------------------------- */
@@ -463,6 +497,8 @@ center h2 {
     /* width: 100%; */
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    margin-top: 7.5%;
+
 }
 .skills-list {
     display: flex;
@@ -504,7 +540,7 @@ center h2 {
 .skill .bar {
     height: 0.8rem;
     padding: 0.1rem;
-    width: 90%;
+    /* width: 90%; */
     background: var(--buttons);
 }
 /* ---------------------------------------------------------- SERVICES --------------------------------------------------- */
@@ -512,16 +548,19 @@ center h2 {
     justify-content: flex-start;
     margin-bottom: 2rem;
     width: fit-content;
+    margin-top: 7.5%;
+
 }
 .Services .services-list {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    gap: 2rem 3rem;
+    gap: 3rem;
 }
 .Services .service {
-    width: 16rem;
-    /* width: 28%; */
-    height: 19rem;
+    /* width: 16rem; */
+    width: 45%;
+    height: 22rem;
     /* margin: 0.5rem; */
     display: flex;
     flex-direction: column;
@@ -569,7 +608,7 @@ center h2 {
 .Projects h2 {
     margin-bottom: 1rem;
     padding-top: 1rem;
-    /* margin-top: 7.5%; */
+    margin-top: 7.5%;
     font-family: var(--primary);
     width: fit-content;
 }
@@ -662,6 +701,8 @@ center h2 {
     -webkit-justify-content: center;
     align-items: center;
     -webkit-align-items: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
 }
 .contact-form, .contact-info {
     display: flex;
@@ -676,7 +717,9 @@ center h2 {
 .contact-form {
     width: 100%;
     color: #000;
-    background: rgba(236, 236, 236, 0.85);
+    /* background: rgba(236, 236, 236, 0.85); */
+    background:#fff;
+
 }
 .form h2 {
     width: fit-content;
@@ -738,13 +781,16 @@ center h2 {
     padding-top: 0.75rem;
 }
 .form .input-data input:focus ~ label,
-.form .input-data textarea:focus ~ label {
+.form .input-data textarea:focus ~ label,
+.form .input-data input:valid ~ label,
+.form .input-data textarea:valid ~ label {
     transform: translateY(-20px);
     font-size: 0.7rem;
 }
 .contact-info {
     width: 100%;
-    color: rgba(236, 236, 236, 0.85);
+    /* color: rgba(236, 236, 236, 0.85); */
+    color:#fff;
     background: var(--buttons);
 }
 .contact-info .info {
@@ -784,7 +830,7 @@ footer {
 footer p {
     display: flex;
     font-family: var(--primary);
-    width: 80vw;
+    width: 100vw;
     margin: auto;
     justify-content: center;
     align-items: center;
@@ -798,17 +844,29 @@ footer p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.About h2, .Projects h2, .Skills h2, .Services h2 {
+    font-size: xx-large;
+}
 /* ----------------------------------------------------- MEDIA QUERIES ------------------------------------------------------ */
 /* need to take away hover event and change flex direction for mobile */
 /* 730x500 */
-@media screen and (max-width:778px) {
-    .icon {
-        object-fit:cover;
+@media only screen 
+    and (min-width:768px)
+    and (max-width:1000px) {
+    .About h2{
+        margin-top: 12%;
+
     }
+    .hero-image {
+        height: 100vh;
+    }
+    /* .hero-text {
+        font-size: x-large;
+    } */
     .Contact {
         max-width: 100vw;
         min-height: 100vh;
-        height: 60rem;
+        height: 65rem; 
     }
     .hero-image, .About, .Projects{
         max-width: 100vw;
@@ -816,12 +874,19 @@ footer p {
     .Contact .container{
         flex-direction: column;
         min-height: max(80%,800px);
-        margin-top: 3rem;
+        width: 80vw;
+        margin: auto;
+        margin-top: 16%;
     }
     .contact-info,.contact-form {
         width: 100%;
     }
-    .contact-form input {
+    .Contact .container .form,.Contact .container .box {
+        padding: 4rem 5rem;
+    }
+    .form .input-data input,
+    .form .input-data textarea {
+        width: 100%;
         margin-bottom: 0rem;
     }
     .info-box, .info-box .info{
@@ -835,9 +900,6 @@ footer p {
         display: flex;
         width: 25%;
         align-items: center;
-    }
-    .form input {
-        width: 100%;
     }
     .contact-info {
         height: 45%;
@@ -884,6 +946,9 @@ footer p {
     }
     .wrapper {
         opacity: 0.70;
+        height: 6rem;
+    }
+    .wrapper.scrolled {
         height: 4rem;
     }
     .wrapper.active {
@@ -915,8 +980,191 @@ footer p {
     .nav-links .icons {
         font-size: xx-large;
     }
-    .hero-image, .About, .Projects, .Contact, .wrapper {
-        min-width: 500px;
-    }
+}
+@media only screen 
+    and (min-width:320px)
+    and (max-width:768px) {
+        #menu-btn {
+            /* display: flex;
+            flex-direction: column;
+            align-items: center; */
+            height: 1.6rem;
+            margin: auto;
+            flex: 1;
+            z-index: 10;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            flex: 2;
+            justify-content: center;
+    
+        }
+        .logo {
+            height: 2.5rem;
+        }
+        .navbar {
+            position: absolute;
+            right: -110%;
+            top: 0;   
+            background: black 100%;
+            opacity: 0.85;
+        }
+        .wrapper {
+            opacity: 0.70;
+            height: 6rem;
+        }
+        .wrapper.scrolled {
+            height: 4rem;
+        }
+        .wrapper.active {
+            /* background: transparent; */
+            /* height: 3.2rem;
+            box-shadow: 0 3px 1rem rgba(0, 0, 0, 0.5); */
+            background: black 100%;
+            opacity: 0.85; 
+            transition: none;
+        }
+        .resume {
+            margin: auto 0 auto 1rem;
+        }
+        .logo {
+            height: 2rem;
+        }
+        .navbar.active {
+            height: 100vh;
+            right: 0;
+            width: 100%;
+            top: 100%;
+    
+        }
+        .nav-links{
+            height: 100%;
+            flex-direction: column;
+            margin-top: 0;
+        }
+        .nav-links li {
+            display: flex;
+            align-items:flex-start;
+            height: 25%;
+            margin: 0 1rem 1rem 1rem;
+        }
+        .nav-links .icons {
+            font-size: xx-large;
+        }
+        .Contact {
+            max-width: 100vw;
+            min-height: 100vh;
+            height: 65rem; 
+        }
+        .hero-image, .About, .Projects{
+            max-width: 100vw;
+        }
+        .Contact .container{
+            flex-direction: column;
+            min-height: max(80%,800px);
+            width: 80vw;
+            margin: auto;
+            margin-top: 16%;
+        }
+        .contact-info,.contact-form {
+            width: 100%;
+        }
+        .Contact .container .form,.Contact .container .box {
+            padding: 4rem 5rem;
+        }
+        .form .input-data input,
+        .form .input-data textarea {
+            width: 100%;
+            margin-bottom: 0rem;
+        }
+        .info-box, .info-box .info{
+            display: flex;
+            align-items: center;
+        }
+        .info span .text{
+            padding-left: 1rem;
+        }
+        .info span .img {
+            display: flex;
+            width: 25%;
+            align-items: center;
+        }
+        .contact-info {
+            height: 45%;
+        }
+        .contact-form {
+            height: 60%;
+        }
+        .contact-form form {
+            height: 90%;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        .contact-info .info-box, .contact-form .form form{
+            display: flex;
+            flex-direction: column;
+        }
+        .intro-text, .hero-text {
+            font-size: small;
+        }
+        .hero-text h1 {
+            font-size: 3rem;
+            text-align: center;
+        }
+        .hero-text p, .hero-text h3 {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .logo-img {
+            height: 10vh;
+        }
+
+        .content {
+            flex-direction: column;
+            height: max(60vh, 700px);
+
+        }
+        .me, .bio {
+            width: 100%;
+        }
+        .me {
+            height: 40%;
+        }
+        .bio {
+            height: 60%;
+            padding: 1rem 0;
+        }
+        .skill {
+            width: 100%;
+        }
+        .project {
+            flex-direction: column;
+            height: 36rem;
+        }
+        .project-cont, .project .image {
+            width: 100%;
+        }
+        .project .image {
+            height: 55%;
+        }
+        .project-cont {
+            height: 45%;
+        }
+        .project h3, .project p, .project a {
+            margin: 1rem;
+        }
+        .Services .service {
+            width: 100%;
+        }
+        .Contact .container .form,.Contact .container .box {
+            padding: 1.5rem;
+        }
+        .form .input-data input,
+        .form .input-data textarea {
+            width: 100%;
+        }
 }
 /* ----------------------------------- HEADER ----------------------------------- */

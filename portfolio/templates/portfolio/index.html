@@ -4,19 +4,19 @@
 {% load static %}
 <!--------------------------- ABOUT ---------------------------------->
 <section id="about" class="About">
-    <h2 data-aos="fade-up" data-aos-duration="2500">About Me</h2>
+    <h2 data-aos="fade-up" data-aos-duration="1000">About Me</h2>
     <div class="content">
-        <div class="me" data-aos="fade-up" data-aos-duration="2500">
-            <img src="{% static 'portfolio/images/profile_1.png' %}" alt="Picture of me">
+        <div class="me" data-aos="fade-up" data-aos-duration="1000">
+            <img src="{% static 'portfolio/images/profile2.png' %}" alt="Picture of me">
         </div>
-        <div class="bio" data-aos="fade-up" data-aos-duration="2500">
+        <div class="bio" data-aos="fade-up" data-aos-duration="1000">
             <p>My name is Erik Lopez. I am a Full Stack Developer based in Seattle, Washington. I create stylish and modern websites, web services, and software applications using a variety of modern technologies. I'm very passionate about designing and developing websites that brings your ideas to life.</p>
         </div>
     </div>
 </section>
 <section class="Skills">
-    <h2 data-aos="fade-up" data-aos-duration="2500">My Skills</h2>
-    <div class="skills-list" data-aos="fade-up" data-aos-duration="2500">
+    <h2 data-aos="fade-up" data-aos-duration="1000">My Skills</h2>
+    <div class="skills-list" data-aos="fade-up" data-aos-duration="1000">
         {% for skill in skills %}
         <div class="skill">
             <div class="skill-cont">
@@ -24,8 +24,8 @@
                 <p>{{ skill.title }}</p>
             </div>
             <div class="bar-box">
-                <div class="bar">
-                    <p>90%</p>
+                <div class="bar" style="width: {{ skill.percentage }}%">
+                    <p>{{ skill.percentage }}%</p>
                 </div>
             </div>
         </div>
@@ -34,10 +34,10 @@
 </section>
 <!--------------------------- PROJECTS ---------------------------------->
 <section id="projects" class="Projects">
-    <h2 data-aos="fade-up" data-aos-duration="2500">Projects</h2>
+    <h2 data-aos="fade-up" data-aos-duration="1000">Projects</h2>
     <div class="project-container">
         {% for project in projects %}
-        <div class="project" data-aos="fade-up" data-aos-duration="2500">
+        <div class="project" data-aos="fade-up" data-aos-duration="1000">
             <img class="image" src="{{ project.image.url }}" alt="">
             <div class="project-cont">
                 <h3>{{ project.title }}</h3>
@@ -50,10 +50,10 @@
 </section>
 <!----------------------------SERVICES------------------------->
 <section class="Services">
-    <h2 data-aos="fade-up" data-aos-duration="2500">Services</h2>
+    <h2 data-aos="fade-up" data-aos-duration="1000">Services</h2>
     <div class="services-list">
         {% for service in services %}
-        <div class="service" data-aos="fade-up" data-aos-duration="2500">
+        <div class="service" data-aos="fade-up" data-aos-duration="1000">
             <img class="image" src="{{ service.image.url }}" alt="service">
             <div class="details">
                 <h3>{{ service.title }}</h3>
@@ -64,7 +64,7 @@
     </div>
 </section>
 <!--------------------------- CONTACT ---------------------------------->
-<section id="contact" class="Contact" data-aos="fade-up" data-aos-duration="2500">
+<section id="contact" class="Contact" data-aos="fade-up" data-aos-duration="1000">
    <section class="container">
         <div class="contact-info">
             <div class="box">
