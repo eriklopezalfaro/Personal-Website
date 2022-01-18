@@ -1,4 +1,4 @@
-// using gsap to animate the sliders
+// using gsap timeline to animate the sliders when website first loads
 const tl = gsap.timeline({defaults: {ease: "power1.out"}})
 
 tl.to('.text', {y: "0%", duration: 1, stagger: 0.35})
@@ -8,6 +8,7 @@ tl.fromTo('.wrapper', {opacity: 0}, {opacity: 1, duration: 1})
 tl.fromTo('.hero-text', {opacity: 0}, {opacity: 1, duration: 1}, "-=1")
 tl.fromTo('.social-media', {opacity: 0}, {opacity: 1, duration: 1}, "-=1")
 
+// jQuery to create nav transition when scrolled to the bottom of the hero landing page
 $(function(){
     $(document).scroll(function(){
         var $nav = $(".wrapper");
@@ -26,6 +27,7 @@ $(function(){
     });
 });
 
+// javascript to create onclick functions for the nav menu when screen size becomes small
 let navbar = document.querySelector('.navbar');
 let wrapper = document.querySelector('.wrapper');
 
