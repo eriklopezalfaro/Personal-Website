@@ -884,11 +884,12 @@ footer p {
         .hero-text > div {
             margin:1.5rem 0;
         }
-        /* .social-media-2 {
+        .social-media-2 {
             margin-bottom: 1rem;
             display: flex;
             height: 3.2rem;
-            width: 60%;
+            width: 55%;
+            max-width: 15rem;
             align-items: center;
             background: transparent;
             border-radius: 2px;
@@ -916,7 +917,6 @@ footer p {
             justify-content: center;
             -webkit-justify-content: center;
             transition: 0.1s ease-in;
-            border-radius: 0 3px 3px 0;
             background: transparent;
             padding-left: 0;
         }
@@ -937,7 +937,7 @@ footer p {
             height: 1.5rem;
             align-items: center;
             justify-content: center;
-        } */
+        }
         #menu-btn {
             height: 1.6rem;
             margin: auto;
