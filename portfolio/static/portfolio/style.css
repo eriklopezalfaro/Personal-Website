@@ -890,6 +890,7 @@ footer p {
             display: flex;
             height: 3.1rem;
             width: 65%;
+            max-width: 13rem;
             align-items: center;
             background: transparent;
             border-radius: 2px;
