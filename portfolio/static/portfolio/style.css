@@ -16,6 +16,8 @@
 }
 html {
     scroll-behavior: smooth;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+
 }
 .hero-image {
     display: -webkit-flex;
@@ -29,7 +31,7 @@ html {
     flex-basis: 100vw;
     position: relative;
     box-shadow: 2rem 0 1rem rgba(32, 32, 32, 0.65);
-
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 /* ---------------------------------------------------- HEADER --------------------------------------------------------- */
 .hero-image {
