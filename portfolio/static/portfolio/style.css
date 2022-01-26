@@ -71,7 +71,7 @@ html {
     align-items: center;
     font-size: x-large;
 }
-.hero-text h1 {
+.hero-text .name {
     color: rgba(255, 255, 255, 0.616);
     animation: flicker 1.5s infinite alternate;
 }
@@ -400,7 +400,6 @@ nav .nav-links {
     flex-wrap: wrap;
     height: max(40vh, 400px);
     margin-bottom: 2rem;
-    
 }
 .me {
     width: 40%;
@@ -577,7 +576,7 @@ nav .nav-links {
     -webkit-justify-content: center;
     justify-content: center;
     align-items: center;
-    height: clamp(34rem, 100vh, 75rem);
+    height: clamp(44rem, 100vh, 75rem);
 }
 .Contact .title {
     width: min(80vw, 1000px);
@@ -755,7 +754,11 @@ footer p {
     and (max-width:1000px) {
     .About h2{
         margin-top: 12%;
-
+    }
+    .About {
+        flex-direction: column;
+        height: fit-content;
+        /* height: max(40vh, 600px); */
     }
     .hero-image {
         height: 100vh;
@@ -881,8 +884,14 @@ footer p {
         .social-media {
             display: none;
         }
+        .intro-text .text{
+            font-size: 1.5rem;
+        }
         .hero-text > div {
             margin:1.5rem 0;
+        }
+        .hero-text .button {
+            margin: 0.5rem;
         }
         .social-media-2 {
             margin-bottom: 1rem;
@@ -1068,16 +1077,20 @@ footer p {
         }
         .content {
             flex-direction: column;
-            height: max(60vh, 700px);
+            /* height: max(60vh, 650px); */
+            height: fit-content;
         }
         .me, .bio {
             width: 100%;
         }
         .me {
-            height: 40%;
+            max-height: 400px;
+        }
+        .me img {
+            max-height: calc(400px - 1rem);
         }
         .bio {
-            height: 60%;
+            height: fit-content;
             padding: 1rem 0;
         }
         .skill {
