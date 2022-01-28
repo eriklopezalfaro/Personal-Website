@@ -1113,6 +1113,9 @@ footer p {
         .project-cont, .project .image {
             width: 100%;
         }
+        .project p, .project a {
+            font-size: smaller;
+        }
         .project .image {
             height: 55%;
         }
