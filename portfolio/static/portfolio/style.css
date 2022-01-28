@@ -712,6 +712,15 @@ nav .nav-links {
     align-items: center;
     font-size: 0.9rem;
 }
+.info span a {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+.info span a:hover {
+    color: #0b8793;
+    /* opacity: 0.6; */
+}
 .info .img {
     width: 2rem;
     height: 70%;

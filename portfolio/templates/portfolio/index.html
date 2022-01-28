@@ -45,7 +45,8 @@
             <img class="image" src="{{ project.image.url }}" alt="">
             <div class="project-cont">
                 <h3>{{ project.title }}</h3>
-                <p><span class="technologies">Technologies:</span> {{ project.description }}</p>
+                <p>{{ project.description }}</p>
+                <p><span class="technologies">Technologies:</span> {{ project.technologies }}</p>
                 <a href="{{ project.url }}">View Github repo &#10140;</a>
             </div>
         </div>
@@ -86,16 +87,16 @@
                         <span class="text">(206)-898-4561</span>
                     </div>
                     <div class="info">
-                        <span class="img"><img src="{% static 'portfolio/images/mail_white.svg' %}" alt=""></span>
-                        <span class="text">eriklopezalfaro@outlook.com</span>
+                        <span class="img"><img src="{% static 'portfolio/images/mail_white.svg' %}" alt=""></span>   
+                        <span class="text"><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%65%72%69%6B%6C%6F%70%65%7A%61%6C%66%61%72%6F%40%6F%75%74%6C%6F%6F%6B%2E%63%6F%6D" target="blank">eriklopezalfaro@outlook.com</a></span>
                     </div>
                     <div class="info">
                         <span class="img"><img src="{% static 'portfolio/images/linkedin.png' %}" alt=""></span>
-                        <span class="text">linkedin.com/eriklopezalfaro</span>
+                        <span class="text"><a href="https://www.linkedin.com/in/eriklopezalfaro/" target="blank">linkedin.com/eriklopezalfaro</a></span>
                     </div>
                     <div class="info">
                         <span class="img"><img src="{% static 'portfolio/images/github.png' %}" alt=""></span>
-                        <span class="text">github.com/eriklopezalfaro</span>
+                        <span class="text"><a href="https://github.com/eriklopezalfaro" target="blank">github.com/eriklopezalfaro</a></span>
                     </div>
                 </div>
             </div>
