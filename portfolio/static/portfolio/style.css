@@ -762,6 +762,9 @@ footer p {
 @media only screen 
     and (min-width:768px)
     and (max-width:1000px) {
+    .project {
+        height: 22rem;
+    }
     .About h2{
         margin-top: 12%;
     }
@@ -1108,13 +1111,13 @@ footer p {
         }
         .project {
             flex-direction: column;
-            height: 36rem;
+            height: 37rem;
         }
         .project-cont, .project .image {
             width: 100%;
         }
         .project p, .project a {
-            font-size: smaller;
+            font-size: smaller; 
         }
         .project .image {
             height: 55%;
