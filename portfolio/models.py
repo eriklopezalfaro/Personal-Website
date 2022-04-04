@@ -8,7 +8,7 @@ class Project(models.Model):
     description = models.CharField(max_length=400)
     technologies = models.CharField(max_length=250, default='Python')
     image = models.ImageField(upload_to='portfolio/images/', blank=True)
-    github_repo_url = models.URLField(blank=True)
+    github_repo_url = models.URLField(null=True)
     website_url = models.URLField(null=True)
     
     def __str__(self):
