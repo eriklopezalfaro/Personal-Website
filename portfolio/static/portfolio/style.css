@@ -1111,7 +1111,7 @@ footer p {
         }
         .project {
             flex-direction: column;
-            height: 37rem;
+            height: 38rem;
         }
         .project-cont, .project .image {
             width: 100%;
