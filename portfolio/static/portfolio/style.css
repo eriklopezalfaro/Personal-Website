@@ -17,6 +17,12 @@
 html {
     scroll-behavior: smooth;
 }
+/* 
+- take away profile picture
+- keep two divs in row
+- zindex for one to pop
+- add image to xindex -1
+*/
 .hero-image {
     display: -webkit-flex;
     display: flex;
@@ -32,10 +38,12 @@ html {
 }
 /* ---------------------------------------------------- HEADER --------------------------------------------------------- */
 .hero-image {
-    background-image: linear-gradient(to bottom right,rgba(54, 0, 54, 0.55), rgba(24, 168, 168, 0.50)), url("../portfolio/images/four.jpg");
+    /* background-image: url("../portfolio/images/h1.jpg");  */
+    background-image: linear-gradient(to bottom right,rgba(54, 0, 54, 0.80), rgba(24, 168, 168, 0.40)), url("../portfolio/images/four.jpg"); 
     background-position: center;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
+    /* background: linear-gradient(0deg, rgba(34, 152, 195, 0.839) 0%, rgba(180, 45, 253, 0.337) 100%),no-repeat cover center url("../portfolio/images/h1.jpg"); */
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
@@ -69,6 +77,8 @@ html {
     font-family: var(--primary);
     justify-content: center;
     align-items: center;
+/*  need to add this only on big screens
+    align-items: flex-start; */
     font-size: x-large;
 }
 .hero-text .name {
@@ -92,6 +102,8 @@ html {
     margin-bottom: 1rem;
     font-family:var(--secondary);
     color: aliceblue;
+    justify-content: flex-start;
+    align-items: flex-start;
  }
 .hero-text .button {
     color: white;
@@ -331,11 +343,12 @@ nav .nav-links {
     justify-content: center;
     -webkit-align-items: center;
     align-items: center;
-    font-size: large;
+    font-size: medium;
 }
 .intro-text .text {
     width: fit-content;
-    background: var(--buttons);
+    background: linear-gradient(to bottom right, #71006c, #0b8793);
+    /* background: var(--buttons); */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -361,7 +374,7 @@ nav .nav-links {
     color: #017BB6;
 }
 .slider {
-    background: linear-gradient(to bottom right, #0b8793, #360033);
+    background: rgba(0, 0, 0, 0.65);
     position: fixed;
     top: 0;
     left: 0;
